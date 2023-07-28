@@ -1,6 +1,13 @@
-# web3.eth python basic
+# Web3 ETH PYTHON BASIC
+# Single & Multisender
+*Binance Smart Chain Testnet
+*Binance Smart Chain Mainnet
+*Ethereum Mainnet
+*Optimism Mainnet
+*Arbitrum Mainnet
+*Polygon Mainnet
 
-- Need python3.7.2+
+- Need Python 3.7.2+
 ```
 pip3 install -r requirements.txt
 ```
