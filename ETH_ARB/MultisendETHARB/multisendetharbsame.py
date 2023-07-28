@@ -14,7 +14,7 @@ import pyperclip as pc
 weth = "https://arbitrum-rpc.gateway.pokt.network" #rpc arb custom
 web3 = Web3(Web3.HTTPProvider(weth))
 
-ctypes.windll.kernel32.SetConsoleTitleW("Multisender ETH")
+ctypes.windll.kernel32.SetConsoleTitleW("Multisender ETH ARB")
 print('multisender eth with same amount')
 print('you can custom to send to a lot address')
 print('this example send to 2 address')
