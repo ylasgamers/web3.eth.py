@@ -1,4 +1,4 @@
-# Web3 ETH PYTHON BASIC
+# Web3 ETH Python Basic
 # Single & Multisender
 - Binance Smart Chain Testnet
 - Binance Smart Chain Mainnet
