@@ -34,9 +34,14 @@ walletRecipient = web3.toChecksumAddress(input("Enter your address recipient 0x.
 chainId = 1
 
 #Get balance account
-balance = web3.eth.get_balance(walletSender)
-balance_eth = web3.fromWei(balance,'ether')
-print('Your Balance' ,balance_eth, 'ETH')
+def UpdateBalance():
+    balance = web3.eth.get_balance(walletSender)
+    balance_eth = web3.fromWei(balance,'ether')
+    balance_eth = round(balance_eth, -(int("{:e}".format(balance_eth).split('e')[1]) - 4))
+    print('Your Balance' ,balance_eth, 'ETH')
+    
+UpdateBalance()
+
 amountToSendETH = web3.toWei(float(input("Enter amount of eth you want to send: ")), 'ether') #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 
 #get the nonce.  Prevents one from sending the transaction twice
@@ -76,6 +81,6 @@ print('https://etherscan.io/tx/'+txid)
 pc.copy('https://etherscan.io/tx/'+txid)
 print('update current balance in 30 second...')
 time.sleep(30)
-print('Current Balance' ,balance_eth, 'ETH')
+UpdateBalance() #get latest balance
 print('will close automatically in 30 second...')
 time.sleep(30)
