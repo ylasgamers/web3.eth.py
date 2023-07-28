@@ -14,7 +14,7 @@ import pyperclip as pc
 weth = "https://optimism-rpc.gateway.pokt.network" #rpc op custom
 web3 = Web3(Web3.HTTPProvider(weth))
 
-ctypes.windll.kernel32.SetConsoleTitleW("Multisender ETH Custom")
+ctypes.windll.kernel32.SetConsoleTitleW("Multisender ETH OP Custom")
 print('multisender eth with custom amount')
 print('you can custom to send to a lot address')
 print('this example send to 2 address')
