@@ -37,7 +37,7 @@ all_recipient = [recipient1, recipient2] #ex send to 2 address, if want more sen
 contract_address = web3.toChecksumAddress('0xd152f549545093347a162dce210e7293f1452150') #Disperse.app
 #gasAmount = 50000 #gas limit // change if transaction fail
 #gasPrice = 1 #gas price
-chainId = 1 
+chainId = 42161 
 
 abi = json.loads('[{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"recipients","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"disperseTokenSimple","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"token","type":"address"},{"name":"recipients","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"disperseToken","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"recipients","type":"address[]"},{"name":"values","type":"uint256[]"}],"name":"disperseEther","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}]')
 contract = web3.eth.contract(address=contract_address, abi=abi)
