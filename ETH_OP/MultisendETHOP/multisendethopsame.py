@@ -85,8 +85,8 @@ tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
 #get transaction hash
 txid = str(web3.toHex(tx_hash))
 print('Transaction Success TX-ID Copied To Clipboard')
-print('https://etherscan.io/tx/'+txid)
-pc.copy('https://etherscan.io/tx/'+txid)
+print('https://optimistic.etherscan.io/tx/'+txid)
+pc.copy('https://optimistic.etherscan.io/tx/'+txid)
 print('update current balance in 30 second...')
 time.sleep(30)
 UpdateBalance() #get latest balance
