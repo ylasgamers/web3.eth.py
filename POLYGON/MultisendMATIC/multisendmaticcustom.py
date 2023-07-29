@@ -46,7 +46,6 @@ contract = web3.eth.contract(address=contract_address, abi=abi)
 def UpdateBalance():
     balance = web3.eth.get_balance(sender)
     balance_matic = web3.fromWei(balance,'ether')
-    balance_matic = round(balance_matic, -(int("{:e}".format(balance_matic).split('e')[1]) - 4))
     print('Your Balance' ,balance_matic, 'MATIC')
     
 UpdateBalance()
