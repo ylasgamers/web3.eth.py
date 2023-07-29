@@ -37,7 +37,6 @@ chainId = 1
 def UpdateBalance():
     balance = web3.eth.get_balance(walletSender)
     balance_eth = web3.fromWei(balance,'ether')
-    balance_eth = round(balance_eth, -(int("{:e}".format(balance_eth).split('e')[1]) - 4))
     print('Your Balance' ,balance_eth, 'ETH')
     
 UpdateBalance()
