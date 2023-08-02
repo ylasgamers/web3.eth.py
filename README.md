@@ -1,11 +1,23 @@
 # Web3 ETH Python Basic
 # Single & Multisender
-- Binance Smart Chain Testnet
-- Binance Smart Chain Mainnet
+- Ethereum Goerli Testnet
 - Ethereum Mainnet
-- Optimism Mainnet
-- Arbitrum Mainnet
+- Binance Smart Chain Testnet & Mainnet
+- Polygon Mumbai Tesnet
 - Polygon Mainnet
+- Polygon zkEVM Testnet & Mainnet
+- Optimism Goerli Testnet
+- Optimism Mainnet
+- Avalanche Testnet & Mainnet
+- Arbitrum Tesnet & Mainnet
+- Base Goerli Testnet
+- Base Mainnet
+- zkSync Era Goerli Testnet
+- zkSync Era Mainnet
+
+#For RPC & ChainID List
+- [Chainlist.org](https://chainlist.org/)
+- [Thirdweb](https://thirdweb.com/chainlist)
 
 - Need Python 3.7.2+
 ```
