@@ -3,7 +3,7 @@
 - Ethereum Goerli Testnet
 - Ethereum Mainnet
 - Binance Smart Chain Testnet & Mainnet
-- Polygon Mumbai Tesnet
+- Polygon Mumbai Testnet
 - Polygon Mainnet
 - Polygon zkEVM Testnet & Mainnet
 - Optimism Goerli Testnet
@@ -36,7 +36,7 @@ Ethereum, Binance Smart Chain, Polygon, Optimism, Arbitrum One Mainnet = 0xd152f
 Base Mainnet = 0xdb154d094f172b8fb23c3ff1cd2f4cfe38fbefc5
 Avalanche Mainnet = 0xdc631264851df3860949d6b2f905b9bd20f96a23 [Contract Not Verified]
 Binance Smart Chain Testnet = 0x228f053f488d1323d0fbfcc46c4796ed284dd7fb
-Ethereum Goerli, Polygon Mumbai & zkEVM, Optimism Goerli, Avalanche, Arbitrum One Goerli, Base Goerli Tesnet = 0x1ea4b08361c220614e10f604808ec385e7d91798
+Ethereum Goerli, Polygon Mumbai & zkEVM, Optimism Goerli, Avalanche, Arbitrum One Goerli, Base Goerli Testnet = 0x1ea4b08361c220614e10f604808ec385e7d91798
 ```
 
 [![YLAS GAMERS](https://i.ibb.co/DK85Cyx/Screenshot-1.png)](https://github.com/ylasgamers/web3.eth.py)
