@@ -15,10 +15,11 @@
 - zkSync Era Goerli Testnet
 - zkSync Era Mainnet
 
-#For RPC & ChainID List
+# For RPC & ChainID List
 - [Chainlist.org](https://chainlist.org/)
 - [Thirdweb](https://thirdweb.com/chainlist)
 
+# Requirements
 - Need Python 3.7.2+
 ```
 pip3 install -r requirements.txt
