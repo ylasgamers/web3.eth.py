@@ -18,23 +18,25 @@ web3 = Web3(Web3.HTTPProvider(inputrpc))
 chainId = int(input("Input Chain ID Blockchain Network : "))
 
 ctypes.windll.kernel32.SetConsoleTitleW("Revoke Contract Address")
+print('')
 print('Revoke Contract Address')
 print('This Support Tesnet & Mainnet Ethereum, Binance Smart Chain, Polygon')
 print('Polygon zkEVM, Arbitrum, Optimism, Avalanche, zkSync Era, & Base')
 print('You Need Gas Fee Depends On Your Choose Blockchain Network Like ETH/BNB/MATIC/OTHER')
+print('')
 
 #connecting web3
 if  web3.isConnected() == True:
-    print("web3 connected...\n")
+    print("Web3 Connected...\n")
 else :
-    print("error connecting please try again...")
+    print("Error Connecting Please Try Again...")
 
-sender = web3.toChecksumAddress(input("Enter your address sender 0x...: "))
+sender = web3.toChecksumAddress(input("Enter Your Address Sender 0x...: "))
 #sender = web3.toChecksumAddress('0x0') #send from this address
-senderkey = input("Enter your privatekey sender abcde12345...: ")
+senderkey = input("Enter Your Privatekey Sender abcde12345...: ")
 #senderkey = 'abcd1234' #senderkey
-token_address = web3.toChecksumAddress(input('Enter token address you want to revoke 0x...: '))
-contract_address = web3.toChecksumAddress(input('Enter contract address you want to revoke 0x...: '))
+token_address = web3.toChecksumAddress(input('Enter Token Address You Want To Revoke 0x...: '))
+contract_address = web3.toChecksumAddress(input('Enter Contract Address You Want To Revoke 0x...: '))
 #gasAmount = 50000 #gas limit // change if transaction fail
 #gasPrice = 1 #gas price
 #chainId = 56 
@@ -43,10 +45,11 @@ abi = json.loads('[{"inputs":[],"stateMutability":"nonpayable","type":"construct
 contract = web3.eth.contract(address=token_address, abi=abi)
 
 #Get balance account
+print('')
 def UpdateBalance():
     balance = web3.eth.get_balance(sender)
     balance_bnb = web3.fromWei(balance,'ether')
-    print('Your Balance' ,balance_bnb, 'ETH/BNB/MATIC/OTHER')
+    print('Your Balance : ' ,balance_bnb, 'ETH/BNB/MATIC/OTHER')
     
 UpdateBalance()
 
@@ -77,13 +80,16 @@ Revoke = contract.functions.approve(contract_address, 0).buildTransaction({
 
 sign_revoke = web3.eth.account.sign_transaction(Revoke, senderkey)
 txrevoke = web3.eth.send_raw_transaction(sign_revoke.rawTransaction)
+
 #get transaction hash
 txid = str(web3.toHex(txrevoke))
-print('Revoke Success TX-ID Copied To Clipboard')
+print('')
+print('Transaction Success TX-ID Copied To Clipboard')
 print(txid)
 pc.copy(txid)
-print('update current balance in 30 second...')
+print('Update Current Balance In 30 Second...')
 time.sleep(30)
+print('')
 UpdateBalance() #get latest balance
-print('will close automatically in 30 second...')
+print('Will Close Automatically In 30 Second...')
 time.sleep(30)
