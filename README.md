@@ -9,7 +9,7 @@
 - Optimism Goerli Testnet
 - Optimism Mainnet
 - Avalanche Testnet & Mainnet
-- Arbitrum Tesnet & Mainnet
+- Arbitrum Testnet & Mainnet
 - Base Goerli Testnet
 - Base Mainnet
 - zkSync Era Goerli Testnet
