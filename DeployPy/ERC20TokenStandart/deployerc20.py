@@ -45,10 +45,12 @@ abi = json.loads(compiled_sol["contracts"]["ERC20TOKEN.sol"]["ERC20TOKEN"]["meta
 
 #set title
 ctypes.windll.kernel32.SetConsoleTitleW("Deploy ERC20TOKEN Standart On Blockchain Network")
+print('')
 print('Deploy ERC20TOKEN Standart On Blockchain Network With Python')
 print('This Support Tesnet & Mainnet Ethereum, Binance Smart Chain, Polygon')
 print('Polygon zkEVM, Arbitrum, Optimism, Avalanche, zkSync Era, & Base')
 print('You Need Gas Fee Depends On Your Choose Blockchain Network Like ETH/BNB/MATIC/OTHER')
+print('')
 
 # For connecting to web3
 from web3 import Web3
@@ -60,20 +62,21 @@ chain_id = int(input("Input Chain ID Blockchain Network : "))
 
 #connecting web3
 if  web3.isConnected() == True:
-    print("web3 connected...\n")
+    print("Web3 Connected...\n")
 else :
-    print("error connecting please try again...")
+    print("Error Connecting Please Try Again...")
 
-address = web3.toChecksumAddress(input("Enter your address 0x...: "))
-private_key = input("Enter your privatekey abcde12345...: ")
-name_ = str(input("Enter token name example CAT : "))
-symbol_ = str(input("Enter token symbol example CT : "))
-totalSupply_ = int(input("Enter total supply token example 1000000 : "))
+address = web3.toChecksumAddress(input("Enter Your Address 0x...: "))
+private_key = input("Enter Your Privatekey abcde12345...: ")
+name_ = str(input("Enter Token Name [Exampel CAT] : "))
+symbol_ = str(input("Enter Token Symbol [Example CT] : "))
+totalSupply_ = int(input("Enter Total Supply Token [Example 1000000] : "))
 Contract = web3.eth.contract(abi=abi, bytecode=bytecode)
 # Get the number of latest transaction
 nonce = web3.eth.getTransactionCount(address)
 
 #Get balance account
+print('')
 def UpdateBalance():
     balance = web3.eth.get_balance(address)
     balance_bnb = web3.fromWei(balance,'ether')
@@ -91,6 +94,12 @@ gas_tx = Contract.constructor(name_, symbol_, totalSupply_).buildTransaction(
     }
 )
 gasAmount = web3.eth.estimateGas(gas_tx)
+
+#calculate transaction fee
+print('')
+gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
+Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
+print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
 
 # build transaction
 transaction = Contract.constructor(name_, symbol_, totalSupply_).buildTransaction(
@@ -113,10 +122,9 @@ transaction_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash)
 print('Transaction Success Contract deployed! TX-ID & Contract Address Copied To Clipboard')
 print('TX-ID : '+txid+ ' & ' 'Contract Address : '+transaction_receipt.contractAddress)
 pc.copy('TX-ID : '+txid+ ' & ' 'Contract Address : '+transaction_receipt.contractAddress)
-#print('https://testnet.bscscan.com/address/'+transaction_receipt.contractAddress)
-#pc.copy('https://testnet.bscscan.com/tx/'+txid+ ' && ' +'https://testnet.bscscan.com/address/'+transaction_receipt.contractAddress)
-print('update current balance in 30 second...')
+print('Update Current Balance In 30 Second...')
 time.sleep(30)
+print('')
 UpdateBalance() #get latest balance
-print('will close automatically in 30 second...')
+print('Will Close Automatically In 30 Second...')
 time.sleep(30)
