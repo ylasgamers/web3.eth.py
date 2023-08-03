@@ -22,7 +22,7 @@ print('')
 print('Multisend AIO Blockchain Network With Custom Amount To Multiple Address')
 print('This Support Tesnet & Mainnet Ethereum, Binance Smart Chain, Polygon')
 print('Polygon zkEVM, Arbitrum, Optimism, Avalanche, zkSync Era, & Base')
-print('This Example Multisend To 4 Address With Custom Amount')
+print('This Example Multisend To 10 Address With Custom Amount')
 print('')
 
 #connecting web3
@@ -35,13 +35,20 @@ sender = web3.toChecksumAddress(input("Enter Your Address Sender 0x...: "))
 #sender = web3.toChecksumAddress('0x0') #send from this address
 senderkey = input("Enter Your Privatekey Sender abcde12345...: ")
 #senderkey = 'abcd1234' #senderkey
+#ex send to 10 address, if want more send to a lot address, you need modif it
 recipient1 = web3.toChecksumAddress(input("Enter Your Address Recipient1 0x...: "))
 recipient2 = web3.toChecksumAddress(input("Enter Your Address Recipient2 0x...: "))
 recipient3 = web3.toChecksumAddress(input("Enter Your Address Recipient3 0x...: "))
 recipient4 = web3.toChecksumAddress(input("Enter Your Address Recipient4 0x...: "))
+recipient5 = web3.toChecksumAddress(input("Enter Your Address Recipient5 0x...: "))
+recipient6 = web3.toChecksumAddress(input("Enter Your Address Recipient6 0x...: "))
+recipient7 = web3.toChecksumAddress(input("Enter Your Address Recipient7 0x...: "))
+recipient8 = web3.toChecksumAddress(input("Enter Your Address Recipient8 0x...: "))
+recipient9 = web3.toChecksumAddress(input("Enter Your Address Recipient9 0x...: "))
+recipient10 = web3.toChecksumAddress(input("Enter Your Address Recipient10 0x...: "))
 #recipient1 = web3.toChecksumAddress('0x0') #to this address
 #recipient2 = web3.toChecksumAddress('0x0') #to this address
-all_recipient = [recipient1,recipient2,recipient3,recipient4] #ex send to 4 address, if want more send to a lot address, you need modif it
+all_recipient = [recipient1,recipient2,recipient3,recipient4,recipient5,recipient6,recipient7,recipient8,recipient9,recipient10] #ex send to 10 address, if want more send to a lot address, you need modif it
 contract_address = web3.toChecksumAddress(input("Enter Contract Address Disperse.app : ")) #Disperse.app
 #gasAmount = 50000 #gas limit // change if transaction fail
 #gasPrice = 1 #gas price
@@ -63,12 +70,24 @@ inputamount1 = float(input("Enter Amount Of You Want Send To Recipient1 : ")) #e
 inputamount2 = float(input("Enter Amount Of You Want Send To Recipient2 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 inputamount3 = float(input("Enter Amount Of You Want Send To Recipient3 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 inputamount4 = float(input("Enter Amount Of You Want Send To Recipient4 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount5 = float(input("Enter Amount Of You Want Send To Recipient5 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount6 = float(input("Enter Amount Of You Want Send To Recipient6 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount7 = float(input("Enter Amount Of You Want Send To Recipient7 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount8 = float(input("Enter Amount Of You Want Send To Recipient8 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount9 = float(input("Enter Amount Of You Want Send To Recipient9 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount10 = float(input("Enter Amount Of You Want Send To Recipient10 : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 amount1 = web3.toWei(float(inputamount1), 'ether')
 amount2 = web3.toWei(float(inputamount2), 'ether')
 amount3 = web3.toWei(float(inputamount3), 'ether')
 amount4 = web3.toWei(float(inputamount4), 'ether')
-amountall = [amount1,amount2,amount3,amount4] #4 address, if want more send to a lot address, you need modif it
-total_pay = web3.toWei(float(inputamount1+inputamount2+inputamount3+inputamount4), 'ether') #ex amount1+amount2+amount3+amount4 = totalpay [ if want more send to a lot address, you need modif it ]
+amount5 = web3.toWei(float(inputamount5), 'ether')
+amount6 = web3.toWei(float(inputamount6), 'ether')
+amount7 = web3.toWei(float(inputamount7), 'ether')
+amount8 = web3.toWei(float(inputamount8), 'ether')
+amount9 = web3.toWei(float(inputamount9), 'ether')
+amount10 = web3.toWei(float(inputamount10), 'ether')
+amountall = [amount1,amount2,amount3,amount4,amount5,amount6,amount7,amount8,amount9,amount10] #10 address, if want more send to a lot address, you need modif it
+total_pay = web3.toWei(float(inputamount1+inputamount2+inputamount3+inputamount4+inputamount5+inputamount6+inputamount7+inputamount8+inputamount9+inputamount10), 'ether') #ex amount1+amount2+amount3+amount4+... = totalpay [ if want more send to a lot address, you need modif it ]
 
 nonce = web3.eth.getTransactionCount(sender)
 
