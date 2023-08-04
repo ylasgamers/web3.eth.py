@@ -1,7 +1,7 @@
 # Web3 ETH Python Basic
 # List
 - Single & Multisender
-- Deploy Contract/Standart Token
+- Deploy Contract/Standart Token & NFT
 - Mnemonic To Privatekey
 - Vanity/Generate ETH Address
 # Blockchain List
