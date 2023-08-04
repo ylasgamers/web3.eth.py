@@ -633,6 +633,7 @@ contract Ownable
 }
 
 contract ERC721NFT is NFTokenMetadata, Ownable {
+	uint256 internal _nonce;
 	constructor(
         string memory nftName_,
         string memory nftSymbol_
@@ -641,7 +642,8 @@ contract ERC721NFT is NFTokenMetadata, Ownable {
 	nftSymbol = nftSymbol_;
 	}
  
- function mint(address _to, uint256 _tokenId, string calldata _uri) external onlyOwner {
+ function mint(address _to, string calldata _uri) external onlyOwner {
+   uint256 _tokenId = ++_nonce;
    super._mint(_to, _tokenId);
    super._setTokenUri(_tokenId, _uri);
  }

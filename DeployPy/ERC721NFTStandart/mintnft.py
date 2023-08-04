@@ -37,7 +37,6 @@ else :
 address = web3.toChecksumAddress(input("Enter Your Owner Address 0x...: "))
 private_key = input("Enter Your Privatekey abcde12345...: ")
 recipient = web3.toChecksumAddress(input("Enter Your Address Recipient 0x...: "))
-token_id = int(input("Enter Random NFT-ID EX 1/2/3/4/ETC : "))
 contract_address = web3.toChecksumAddress(input('Enter NFT Contract Address 0x...: '))
 uri_url = str(input("Enter URI URL ipfs IMAGE NFT : "))
 
@@ -57,7 +56,7 @@ def UpdateBalance():
 UpdateBalance()
 
 #estimate gas limit contract
-gas_tx = Contract.functions.mint(recipient, token_id, uri_url).buildTransaction(
+gas_tx = Contract.functions.mint(recipient, uri_url).buildTransaction(
     {
         "chainId": chain_id,
         "gasPrice": web3.eth.gas_price,
@@ -74,7 +73,7 @@ Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
 
 # build transaction
-transaction = Contract.functions.mint(recipient, token_id, uri_url).buildTransaction(
+transaction = Contract.functions.mint(recipient, uri_url).buildTransaction(
     {
         "chainId": chain_id,
         "gas": gasAmount,
