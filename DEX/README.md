@@ -7,3 +7,19 @@
 - Other DEX
 
 # List Factory & Router Address DEX
+- [PancakeSwap Factory V2](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v2-contracts/factory-v2)
+```
+Binance Smart Chain Testnet : 0x6725F303b657a9451d8BA641348b6761A6CC7a17
+Binance Smart Chain Mainnet : 0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73
+Ethereum Mainnet : 0x1097053Fd2ea711dad45caCcc45EfF7548fCB362
+Polygon zkEVM Mainnet : 0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E
+zkSync Era Mainnet : 0xd03D8D566183F0086d8D09A84E1e30b58Dd5619d
+```
+- [PancakeSwap Router V2](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v2-contracts/router-v2)
+```
+Binance Smart Chain Testnet : 0xD99D1c33F9fC3444f8101754aBC46c52416550D1
+Binance Smart Chain Mainnet : 0x10ED43C718714eb63d5aA57B78B54704E256024E
+Ethereum Mainnet : 0xEfF92A263d31888d860bD50809A8D171709b7b1c
+Polygon zkEVM Mainnet : 0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb
+zkSync Era Mainnet : 0x5aEaF2883FBf30f3D62471154eDa3C0c1b05942d
+```
