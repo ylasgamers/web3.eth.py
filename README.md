@@ -28,8 +28,6 @@
 # Requirements
 - Need Python 3.7.2+
 ```
-pip3 install -r requirements.txt
-or
 pip install -r requirements.txt
 ```
 
