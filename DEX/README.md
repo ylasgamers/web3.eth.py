@@ -23,3 +23,15 @@ Ethereum Mainnet : 0xEfF92A263d31888d860bD50809A8D171709b7b1c
 Polygon zkEVM Mainnet : 0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb
 zkSync Era Mainnet : 0x5aEaF2883FBf30f3D62471154eDa3C0c1b05942d
 ```
+- [Uniswap Factory V2](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory)
+```
+Ethereum Mainnet & Goerli Ethereum Testnet : 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
+```
+- [Uniswap Router 01 V2](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/router-01)
+```
+Ethereum Mainnet & Goerli Ethereum Testnet : 0xf164fC0Ec4E93095b804a4795bBe1e041497b92a
+```
+- [Uniswap Router 02 V2](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/router-01)
+```
+Ethereum Mainnet & Goerli Ethereum Testnet : 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
+```
