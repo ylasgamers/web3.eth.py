@@ -35,3 +35,21 @@ Ethereum Mainnet & Goerli Ethereum Testnet : 0xf164fC0Ec4E93095b804a4795bBe1e041
 ```
 Ethereum Mainnet & Goerli Ethereum Testnet : 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
 ```
+- [Quickswap Factory V2](https://docs.quickswap.exchange/reference/smart-contracts/v2/01-factory)
+```
+Polygon Mainnet : 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
+```
+- [Quickswap Router V2](https://docs.quickswap.exchange/reference/smart-contracts/v2/router02)
+```
+Polygon Mainnet : 0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff
+```
+- [Camelot Factory](https://docs.camelot.exchange/contracts/amm-v2/factory)
+```
+Arbitrum Goerli Testnet : 0x659fd9F4536f540bd051c2739Fc8b8e9355E5042
+Arbitrum One Mainnet : 0x6EcCab422D763aC031210895C81787E87B43A652
+```
+- [Camelot Router](https://docs.camelot.exchange/contracts/amm-v2/router)
+```
+Arbitrum Goerli Testnet : 0xA91527e5a4CE620e5a18728e52572769DcEcdb99
+Arbitrum One Mainnet : 0xc873fEcbd354f5A56E00E710B90EF4201db2448d
+```
