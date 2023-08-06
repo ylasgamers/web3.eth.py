@@ -4,7 +4,7 @@
 - Deploy Contract/Standart Token & NFT
 - Mnemonic To Privatekey
 - Vanity/Generate ETH Address
-- Soon DEX Swap Buy/Sell / Add Remove Liquidity / Other
+- DEX Swap Buy/Sell & Add/Remove Liquidity
 # Blockchain List
 - Ethereum Goerli Testnet
 - Ethereum Mainnet
