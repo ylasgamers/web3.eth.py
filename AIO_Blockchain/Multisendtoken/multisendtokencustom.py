@@ -66,7 +66,7 @@ tokenSymbol = token_contract.functions.symbol().call()
 def UpdateBalance():
     balance = web3.eth.get_balance(sender)
     balance_bnb = web3.fromWei(balance,'ether')
-    print('Your Balance' ,balance_bnb, 'BNB')
+    print('Your Balance' ,balance_bnb, 'ETH/BNB/MATIC/OTHER')
     #Get token balance account
     token_balance = token_contract.functions.balanceOf(sender).call()
     balance_token = web3.fromWei(token_balance, 'ether')
