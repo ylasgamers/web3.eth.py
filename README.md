@@ -5,6 +5,7 @@
 - Mnemonic To Privatekey
 - Vanity/Generate ETH Address
 - DEX Swap Buy/Sell & Add/Remove Liquidity
+- Launchpad Ex : PinkSale
 # Blockchain List
 - Ethereum Goerli Testnet
 - Ethereum Mainnet
