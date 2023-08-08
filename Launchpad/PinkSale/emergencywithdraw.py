@@ -67,7 +67,7 @@ print('')
 gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
-print('Processing Emergency Withdraw')')
+print('Processing Emergency Withdraw')
 
 token_tx = contractpresale.functions.emergencyWithdraw().buildTransaction({
     'chainId': chainId,
