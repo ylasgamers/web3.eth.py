@@ -55,7 +55,7 @@ nonce = web3.eth.getTransactionCount(sender)
 
 #estimate gas limit contract
 nonce2 = web3.eth.getTransactionCount(sender)
-gas_tx = contractpresale.functions.withdrawContribution().buildTransaction({
+gas_tx = contractpresale.functions.finalize().buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
@@ -70,7 +70,7 @@ Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
 print('Processing Finalize Presale')
 
-token_tx = contractpresale.functions.withdrawContribution().buildTransaction({
+token_tx = contractpresale.functions.finalize().buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gas': gasAmount,
