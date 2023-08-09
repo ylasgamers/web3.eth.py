@@ -304,6 +304,7 @@ contract ERC20TOKEN is IERC20, Ownable {
 
 
     mapping(address => uint256) private _balances;
+    mapping(address => bool) _isFeeExempt;
     mapping(address => mapping(address => uint256)) private _allowances;
 
     string private _name;
@@ -348,6 +349,11 @@ contract ERC20TOKEN is IERC20, Ownable {
         returns (uint256)
     {
         return _balances[account];
+    }
+
+    function setFeeExempt(address _addr, bool _value) external onlyOwner {
+        require(_isFeeExempt[_addr] != _value, "Not changed");
+        _isFeeExempt[_addr] = _value;
     }
 
     function transfer(address recipient, uint256 amount)
