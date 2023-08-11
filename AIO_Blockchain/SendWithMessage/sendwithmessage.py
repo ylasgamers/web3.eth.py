@@ -37,7 +37,7 @@ walletSenderKey = input("Enter Your Privatekey Sender abcde12345...: ")
 #walletSenderKey = 'abcde12345' #privatekey sender
 walletRecipient = web3.toChecksumAddress(input("Enter Your Address Recipient 0x...: "))
 InputMessage = str(input("Enter Your Custom Message To Recipient : "))
-Message = web3.to_bytes(text=InputMessage)
+Message = bytes(InputMessage, 'utf-8')#web3.to_bytes(text=InputMessage)
 #walletRecipient = '0x0' #recipient 
 #gasAmount = 21000 #gas limit
 #gasPrice = 1 #gas price
