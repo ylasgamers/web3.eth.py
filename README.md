@@ -19,8 +19,6 @@
 - Arbitrum One Testnet & Mainnet
 - Base Goerli Testnet
 - Base Mainnet
-- zkSync Era Goerli Testnet
-- zkSync Era Mainnet
 
 # For RPC & ChainID List
 - [Chainlist.org](https://chainlist.org/)
