@@ -8,11 +8,11 @@ pip install web3==5.28.0
 ```
 # Make Easy opBNBCampaign
 # List
-- Auto Bridge opBNB Testnet [Custom Value]
-- Auto Bridge Token opBNB Testnet [Custom Value]
-- Auto Transfer opBNB Testnet To Other Address [Custom Value & 100x)
-- Auto Transfer Token opBNB Testnet To Other Address [Custom Value & 100x)
-- Auto Mint opBNB Genesis NFT Testnet [100x]
+- Auto Bridge opBNB Testnet [Custom Value & Total Transaction Count]
+- Auto Bridge Token opBNB Testnet [Custom Value & Total Transaction Count]
+- Auto Transfer opBNB Testnet To Other Address [Custom Value & Total Transaction Count)
+- Auto Transfer Token opBNB Testnet To Other Address [Custom Value & Total Transaction Count)
+- Auto Mint opBNB Genesis NFT Testnet [Total Transaction Count]
 
 # List Token Address L1 & L2
 ```
