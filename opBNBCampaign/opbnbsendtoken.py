@@ -30,6 +30,7 @@ recipient = web3.toChecksumAddress(input("Enter Your Address Recipient 0x...: ")
 contract_token = web3.toChecksumAddress(input("Enter Token Address 0x...: ")) #btcb
 #gasAmount = 50000 #gas limit // change if transaction fail
 gasPrice = 1 #gas price
+numDetected = 0
 
 tokenabi = json.loads('[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]')
 contracttoken = web3.eth.contract(address=contract_token, abi=tokenabi)
@@ -44,73 +45,79 @@ def UpdateBalance():
     balancetoken = contracttoken.functions.balanceOf(sender).call()
     balance_btcb = web3.fromWei(balancetoken,'ether')
     print('Your Token : ' ,balance_btcb, tokenSymbol)
+    print('Total Transaction :', str(numDetected))
+    
 UpdateBalance()
 
 inputamount1 = float(input("Enter Amount Of Token You Want Send To Recipient : "))
 inputamount = web3.toWei(float(inputamount1), 'ether') #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 
-def RepeatMint():
-    #estimate gas limit contract
-    gas_tx = contracttoken.functions.transfer(recipient, inputamount).buildTransaction({
-        'chainId': chainId,
-        'from': sender,
-        'gasPrice': web3.toWei(gasPrice,'gwei'),
-        'nonce': web3.eth.getTransactionCount(sender)
-    })
-    gasAmount = web3.eth.estimateGas(gas_tx)
+def RepeatMint(event):
+    try:
+        #estimate gas limit contract
+        gas_tx = contracttoken.functions.transfer(recipient, inputamount).buildTransaction({
+            'chainId': chainId,
+            'from': sender,
+            'gasPrice': web3.toWei(gasPrice,'gwei'),
+            'nonce': web3.eth.getTransactionCount(sender)
+        })
+        gasAmount = web3.eth.estimateGas(gas_tx)
+    
+        #calculate transaction fee
+        #print('')
+        #gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
+        #Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
+        #print('Transaction Fee :' ,Caclfee, 'tcBNB')
+    
+        token_tx = contracttoken.functions.transfer(recipient, inputamount).buildTransaction({
+            'chainId': chainId,
+            'from': sender,
+            'gas': gasAmount,
+            'gasPrice': web3.toWei(gasPrice,'gwei'),
+            'nonce': web3.eth.getTransactionCount(sender)
+        })
+        #sign the transaction
+        sign_txn = web3.eth.account.signTransaction(token_tx, senderkey)
+        #send transaction
+        tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
+        txid = str(web3.toHex(tx_hash))
+        print(txid)
+        UpdateBalance() #get latest balance
+        global numDetected
+        numDetected = numDetected + 1
+    
+    except:
+        pass
 
-    #calculate transaction fee
-    #print('')
-    #gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
-    #Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
-    #print('Transaction Fee :' ,Caclfee, 'tcBNB')
+async def finalizedLoop(event_filter, poll_interval):
+    while True:
+        try:
+            for Transfer in event_filter.get_new_entries():
+                RepeatMint(Transfer)
+            await asyncio.sleep(poll_interval)
+        except:
+            pass
+        
+def listenForFinalized():
+    event_filter = contracttoken.events.Transfer.createFilter(fromBlock='latest')
+    #block_filter = web3.eth.filter('latest')
+    # tx_filter = web3.eth.filter('pending')
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(
+            asyncio.gather(
+                finalizedLoop(event_filter, 0)))  
+                # log_loop(block_filter, 2),
+                # log_loop(tx_filter, 2)))
+                 
+    finally:
+        # close loop to free up system resources
+        #loop.close()
+        #print("loop close")
+        listenForFinalized()
 
-    token_tx = contracttoken.functions.transfer(recipient, inputamount).buildTransaction({
-        'chainId': chainId,
-        'from': sender,
-        'gas': gasAmount,
-        'gasPrice': web3.toWei(gasPrice,'gwei'),
-        'nonce': web3.eth.getTransactionCount(sender)
-    })
-    #sign the transaction
-    sign_txn = web3.eth.account.signTransaction(token_tx, senderkey)
-    #send transaction
-    tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
-    txid = str(web3.toHex(tx_hash))
-    print(txid)
-    UpdateBalance() #get latest balance
+        #beware of valueerror code -32000 which is a glitch. make it ignore it and go bakc to listening
 
-#10x
-def Repeat10x():
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
-    RepeatMint()
-    time.sleep(1)
+listenForFinalized()
 
-#10x10=100    
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
-Repeat10x()
+input("")
