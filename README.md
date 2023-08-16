@@ -19,6 +19,7 @@
 - Arbitrum One Testnet & Mainnet
 - Base Goerli Testnet
 - Base Mainnet
+- opBNB Testnet & Mainnet
 
 # For RPC & ChainID List
 - [Chainlist.org](https://chainlist.org/)
