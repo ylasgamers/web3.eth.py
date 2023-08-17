@@ -94,7 +94,7 @@ print('')
 inputamount1 = float(input("Enter Amount Of Token You Want To Bridge : "))
 inputamount = web3.toWei(float(inputamount1), 'ether') #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 
-def RepeatMint(event):
+def RepeatMint():
     try:
         #estimate gas limit contract
         # gas_tx = contractbridge.functions.depositERC20(contract_token, contract_tokenl2, inputamount, l2Gas, Message).buildTransaction({
@@ -148,7 +148,8 @@ def listenForFinalized():
     try:
         loop.run_until_complete(
             asyncio.gather(
-                finalizedLoop(event_filter, 0)))       
+                #finalizedLoop(event_filter, 0)))
+                RepeatMint()))
                 # log_loop(block_filter, 2),
                 # log_loop(tx_filter, 2)))
                  
