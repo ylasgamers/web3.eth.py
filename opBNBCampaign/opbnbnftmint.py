@@ -46,7 +46,7 @@ def UpdateBalance():
     
 UpdateBalance()
 
-def RepeatMint(event):
+def RepeatMint():
     try:
         #estimate gas limit contract
         gas_tx = contractnft.functions.mint().buildTransaction({
@@ -100,7 +100,8 @@ def listenForFinalized():
     try:
         loop.run_until_complete(
             asyncio.gather(
-                finalizedLoop(event_filter, 0)))       
+                #finalizedLoop(event_filter, 0)))
+                RepeatMint()))
                 # log_loop(block_filter, 2),
                 # log_loop(tx_filter, 2)))
                  
