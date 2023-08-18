@@ -22,6 +22,12 @@
 - Base Goerli Testnet
 - Base Mainnet
 - opBNB Testnet & Mainnet
+- Celo Testnet & Mainnet
+- Cronos Testnet & Mainnet
+- Fantom Testnet & Mainnet
+- Gnosis Chain Testnet & Mainnet
+- Boba Testnet & Mainnet
+- Moonbeam Testnet & Mainnet
 
 # For RPC & ChainID List
 - [Chainlist.org](https://chainlist.org/)
