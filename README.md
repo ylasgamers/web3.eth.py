@@ -6,6 +6,8 @@
 - Vanity/Generate ETH Address
 - DEX Swap Buy/Sell & Add/Remove Liquidity
 - Launchpad Ex : PinkSale
+- Bridge To Other Blockhain
+
 # Blockchain List
 - Ethereum Goerli Testnet
 - Ethereum Mainnet
