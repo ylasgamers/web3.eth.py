@@ -1,1 +1,9 @@
-
+# List Token Address L1 & L2
+```
+BTC L1 = 0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c
+BTC L2 = Soon
+USDT L1 = 0x55d398326f99059ff775485246999027b3197955
+USDT L2 = Soon
+BUSD L1 = 0xe9e7cea3dedca5984780bafc599bd69add087d56
+BUSD L2 = Soon
+```
