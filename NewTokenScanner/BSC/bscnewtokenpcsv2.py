@@ -53,9 +53,9 @@ def foundToken(event):
             tokenName = getToken.functions.name().call()
             tokenSymbol = getToken.functions.symbol().call()
             print("New Token Found !!!")
-            print("Token Name : ",tokenName)
-            print("Token Symbol : ",tokenSymbol)
-            print("Token Address : ",tokenAddress)
+            print("Token Name :",tokenName)
+            print("Token Symbol :",tokenSymbol)
+            print("Token Address :",tokenAddress)
             print("Explorer : https://bscscan.com/token/"+tokenAddress)
                     
             print("") # line break: move onto scanning for next token
