@@ -10,6 +10,8 @@ import sys
 import ctypes
 
 ctypes.windll.kernel32.SetConsoleTitleW("BSC New Token Scanner On DEX")
+os.system("mode con: lines=32766")
+os.system("") #allows different colour text to be used
 
 bscrpc = "https://bsc-rpc.gateway.pokt.network"
 web3 = Web3(Web3.HTTPProvider(bscrpc))
