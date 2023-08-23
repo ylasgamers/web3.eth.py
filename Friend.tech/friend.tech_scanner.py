@@ -34,7 +34,7 @@ def foundTrader(event):
         ethAmounts = int(0)
         jsonEventContents = json.loads(Web3.toJSON(event));
 
-        if ((jsonEventContents['args']['ethAmount'] == ethAmounts) or (jsonEventContents['args']['subject']) == ethAmounts):
+        if ((jsonEventContents['args']['ethAmount'] == ethAmounts) or (jsonEventContents['args']['subject'] == ethAmounts)):
         
             if (jsonEventContents['args']['ethAmount'] == ethAmounts):
                subjectAddr = jsonEventContents['args']['subject']
