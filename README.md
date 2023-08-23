@@ -7,6 +7,7 @@
 - DEX Swap Buy/Sell & Add/Remove Liquidity
 - Launchpad Ex : PinkSale
 - Bridge To Other Blockhain
+- New Token Scanner
 
 # Blockchain List
 - Ethereum Goerli Testnet
