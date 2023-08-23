@@ -10,6 +10,8 @@ import sys
 import ctypes
 
 ctypes.windll.kernel32.SetConsoleTitleW("Friend.tech Scanner | Loading...")
+os.system("mode con: lines=32766")
+os.system("") #allows different colour text to be used
 
 baserpc = "https://gateway.tenderly.co/public/base"
 web3 = Web3(Web3.HTTPProvider(baserpc))
