@@ -1,13 +1,14 @@
 # Web3 ETH Python Basic
 # List
 - Single & Multisender & Revoke
-- Deploy Contract/Standart Token & NFT
+- Deploy Contract/Standart Token, NFT, UniswapV2Factory & UniswapV2Router02
 - Mnemonic To Privatekey
 - Vanity/Generate ETH Address
 - DEX Swap Buy/Sell & Add/Remove Liquidity
 - Launchpad Ex : PinkSale
 - Bridge To Other Blockhain
 - New Token Scanner
+- Friend.tech New Trade/User Scanner
 
 # Blockchain List
 - Ethereum Goerli Testnet
