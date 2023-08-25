@@ -1,5 +1,5 @@
 - You Need Deploy UniswapV2Factory First
-- After Deploy UniswapV2Factory, You Need INIT_CODE_PAIR_HASH To Put On UniswapV2Router02
+- After Deploy UniswapV2Factory, You Need INIT_CODE_PAIR_HASH To Put On UniswapV2Router02.sol
 - You Can Use INIT_CODE_PAIR_HASH.py To Get INIT_CODE_PAIR_HASH
 ```
 Here You Need Find This Function On UniswapV2Router02.sol :
