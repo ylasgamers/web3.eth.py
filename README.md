@@ -60,5 +60,5 @@ opBNB Testnet = 0x370034cbD64aA29516A49aaC5A36575400DBc814
 Ethereum Goerli, Polygon Mumbai & zkEVM, Optimism Goerli, Avalanche, Arbitrum One Goerli, Base Goerli Testnet = 0x1ea4b08361c220614e10f604808ec385e7d91798
 ```
 
-- Buy a me coffe here [eth/bsc/matic/other](0x00000012ec7f8928bd4deb14da43d53184ad6a51)
+- Buy a me coffe here eth/bsc/matic/other 0x00000012ec7f8928bd4deb14da43d53184ad6a51
 [![YLAS GAMERS](https://i.ibb.co/DK85Cyx/Screenshot-1.png)](https://github.com/ylasgamers/web3.eth.py)
