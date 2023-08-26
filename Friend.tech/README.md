@@ -1,6 +1,7 @@
 # List
 - Scanner New User First Trade
-- Scanner New User To Sniper [ Soon ]
+- Scanner New User Sniper Buy Shares Only
+- Scanner New User Sniper Buy Shares & Sell Shares With Custom Time
 
 # Requirements
 - Need Python 3.7.2+
