@@ -86,7 +86,7 @@ def SellShares(subjectAddr):
         gas_tx = contract.functions.sellShares(subjectAddr, 1).buildTransaction({
             'chainId': chainId,
             'from': sender,
-            'value': web3.toWei(getsellpricefee, 'ether'),
+            #'value': web3.toWei(getsellpricefee, 'ether'),
             'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
             'nonce': web3.eth.getTransactionCount(sender)
         })
@@ -95,7 +95,7 @@ def SellShares(subjectAddr):
         sell_tx = contract.functions.sellShares(subjectAddr, 1).buildTransaction({
             'chainId': chainId,
             'from': sender,
-            'value': web3.toWei(getsellpricefee, 'ether'),
+            #'value': web3.toWei(getsellpricefee, 'ether'),
             'gas': gasAmount,
             'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
             'nonce': web3.eth.getTransactionCount(sender)
