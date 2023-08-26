@@ -30,6 +30,7 @@
 - Gnosis Chain Testnet & Mainnet
 - Boba Testnet & Mainnet
 - Moonbeam Testnet & Mainnet
+- Other Chain
 
 # For RPC & ChainID List
 - [Chainlist.org](https://chainlist.org/)
