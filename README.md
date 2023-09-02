@@ -7,7 +7,7 @@
 - DEX Swap Buy/Sell & Add/Remove Liquidity
 - Launchpad Ex : PinkSale
 - Bridge To Other Blockhain
-- New Token Scanner
+- New Token Scanner On DEX
 - Friend.tech New Trade/User Scanner
 
 # Blockchain List
