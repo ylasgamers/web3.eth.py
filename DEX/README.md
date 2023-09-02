@@ -38,7 +38,7 @@ Ethereum Mainnet & Goerli Ethereum Testnet : 0x7a250d5630B4cF539739dF2C5dAcb4c65
 - [Sushiswap Factory & Router V2](https://docs.sushi.com/docs/Products/Classic%20AMM/Deployment%20Addresses)
 - [Quickswap Factory V2](https://docs.quickswap.exchange/reference/smart-contracts/v2/01-factory)
 ```
-Polygon Mainnet : 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
+Polygon Mainnet : 0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32
 ```
 - [Quickswap Router V2](https://docs.quickswap.exchange/reference/smart-contracts/v2/router02)
 ```
