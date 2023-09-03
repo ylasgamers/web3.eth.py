@@ -8,7 +8,7 @@
 - Launchpad Ex : PinkSale
 - Bridge To Other Blockhain
 - New Token Scanner On DEX
-- Friend.tech New Trade/User Scanner
+- Friend.tech & Friend3.group New User Scanner & Sniper
 
 # Blockchain List
 - Ethereum Goerli Testnet
