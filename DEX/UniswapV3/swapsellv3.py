@@ -100,7 +100,7 @@ print('')
 
 #estimate gas limit contract
 est = web3.toWei(float(0.0000001), 'ether')
-gas_tx = contractrouter.functions.exactInputSingle((wrapped, tokenaddr, 500, sender, est, 0, 0, deadline)).buildTransaction({
+gas_tx = contractrouter.functions.exactInputSingle((wrapped, tokenaddr, 3000, sender, est, 0, 0, deadline)).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'value': est,
@@ -117,7 +117,7 @@ Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH')
 print('Processing Swap Sell :' ,amountFromWei ,tokenName, 'TO WETH')
 
-token_tx = contractrouter.functions.exactInputSingle((tokenaddr, wrapped, 500, sender, amount, 0, 0, deadline)).buildTransaction({
+token_tx = contractrouter.functions.exactInputSingle((tokenaddr, wrapped, 3000, sender, amount, 0, 0, deadline)).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gas': gasAmount,
