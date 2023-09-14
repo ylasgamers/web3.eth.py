@@ -106,7 +106,6 @@ gas_tx = contractrouter.functions.exactInputSingle((wrapped, tokenaddr, 500, sen
     'nonce': web3.eth.getTransactionCount(sender)
 })
 gasAmount = web3.eth.estimate_gas(gas_tx)
-print(gasAmount)
 
 #calculate transaction fee
 print('')
