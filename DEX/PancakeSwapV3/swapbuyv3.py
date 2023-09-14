@@ -62,7 +62,7 @@ def UpdateBalance():
 UpdateBalance()
 
 print('')
-inputamount = float(input("Enter Amount Of You Want To Buy [ETH/BNB/MATIC/OTHER] : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
+inputamount = float(input("Enter Amount Of You Want To Buy [BNB] : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 amount = web3.toWei(float(inputamount), 'ether')
 deadline = int(time.time()) + 1000000
         
@@ -112,8 +112,8 @@ print('')
 amountFromWei = web3.fromWei(amount, 'ether')
 gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
-print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
-print('Processing Swap Buy :' ,amountFromWei, 'ETH/BNB/MATIC/OTHER FOR TOKEN' ,tokenName)
+print('Transaction Fee :' ,Caclfee, 'BNB')
+print('Processing Swap Buy :' ,amountFromWei, 'BNB FOR TOKEN' ,tokenName)
 
 token_tx = contractrouter.functions.exactInputSingle((wrapped, tokenaddr, 500, sender, amount, 0, 0, deadline)).buildTransaction({
     'chainId': chainId,

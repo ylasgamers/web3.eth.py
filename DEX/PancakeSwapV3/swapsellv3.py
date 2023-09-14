@@ -81,7 +81,7 @@ print('')
 print('Processing Approve Spender Token...')
 gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasApprove, 'gwei')
-print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
+print('Transaction Fee :' ,Caclfee, 'BNB')
 
 #Approve
 Approve = token_contract.functions.approve(contract_router, amount).buildTransaction({
@@ -114,8 +114,8 @@ print('')
 amountFromWei = web3.fromWei(amount, 'ether')
 gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
-print('Transaction Fee :' ,Caclfee, 'ETH/BNB/MATIC/OTHER')
-print('Processing Swap Sell :' ,amountFromWei ,tokenName, 'TO ETH/BNB/MATIC/OTHER')
+print('Transaction Fee :' ,Caclfee, 'BNB')
+print('Processing Swap Sell :' ,amountFromWei ,tokenName, 'TO WBNB')
 
 token_tx = contractrouter.functions.exactInputSingle((tokenaddr, wrapped, 500, sender, amount, 0, 0, deadline)).buildTransaction({
     'chainId': chainId,
