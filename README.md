@@ -56,6 +56,7 @@ Ethereum, Binance Smart Chain, Polygon, Optimism, Arbitrum One Mainnet = 0xd152f
 Base Mainnet = 0xdb154d094f172b8fb23c3ff1cd2f4cfe38fbefc5
 Avalanche Mainnet = 0xdc631264851df3860949d6b2f905b9bd20f96a23 [Contract Not Verified]
 opBNB Mainnet = 0xeD4592D9300F7cA8b6C08Ba65d0C83e822371AaB
+Evadore Mainnet = 0x6a9c6479e9e44d6770dce62297125fbfd5809160
 Binance Smart Chain Testnet = 0x228f053f488d1323d0fbfcc46c4796ed284dd7fb
 opBNB Testnet = 0x370034cbD64aA29516A49aaC5A36575400DBc814
 Ethereum Goerli, Polygon Mumbai & zkEVM, Optimism Goerli, Avalanche, Arbitrum One Goerli, Base Goerli Testnet = 0x1ea4b08361c220614e10f604808ec385e7d91798
