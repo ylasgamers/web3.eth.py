@@ -74,9 +74,6 @@ def BuyShares(subjectAddr):
         txid = str(web3.toHex(tx_hash))
         print('Transaction Buy Shares Success TX-ID : ',txid)
         UpdateBalance()
-        
-BuySharesThread = threading.Thread(target=BuyShares(None))
-BuySharesThread.start()
 
 #SELL SHARES THREAD
 def SellShares(subjectAddr):
@@ -108,9 +105,6 @@ def SellShares(subjectAddr):
         txid = str(web3.toHex(tx_hash))
         print('Transaction Sell Shares Success TX-ID : ',txid)
         UpdateBalance()
-        
-SellSharesThread = threading.Thread(target=SellShares(None))
-SellSharesThread.start()
         
 print("Scanning For New Trader...")
 print("") #line break
