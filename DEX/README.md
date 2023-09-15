@@ -3,7 +3,7 @@
 - Uniswap V2 & V3
 - Sushiswap
 - Quickswap V2
-- Camelot
+- Camelot V2 & V3
 - Other DEX
 
 # List Factory & Router Address DEX
