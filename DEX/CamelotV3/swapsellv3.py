@@ -62,6 +62,33 @@ def UpdateBalance():
     
 UpdateBalance()
 
+def SwapToETH():
+    weth_balance = contractwrapped.functions.balanceOf(sender).call()
+    gaswd_tx = contractwrapped.functions.withdraw(weth_balance).buildTransaction({
+        'chainId': chainId,
+        'from': sender,
+        'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+        'nonce': web3.eth.getTransactionCount(sender)
+    })
+    gasWDAmount = web3.eth.estimate_gas(gaswd_tx)
+    weth_tx = contractwrapped.functions.withdraw(weth_balance).buildTransaction({
+        'chainId': chainId,
+        'from': sender,
+        'gas': gasWDAmount,
+        'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+        'nonce': web3.eth.getTransactionCount(sender)
+    })
+    #sign the transaction
+    signwd_txn = web3.eth.account.signTransaction(weth_tx, senderkey)
+    #send transaction
+    txwd_hash = web3.eth.sendRawTransaction(signwd_txn.rawTransaction)
+    #get transaction hash
+    txidwd = str(web3.toHex(txwd_hash))
+    print('')
+    print('Transaction Success TX-ID Copied To Clipboard')
+    print(txidwd)
+    pc.copy(txidwd)
+
 print('')
 inputamount = float(input("Enter Amount Of Token You Want To Sell : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
 amount = web3.toWei(inputamount, 'ether')
@@ -94,8 +121,8 @@ Approve = token_contract.functions.approve(contract_router, amount).buildTransac
 
 sign_approve = web3.eth.account.sign_transaction(Approve, senderkey)
 web3.eth.send_raw_transaction(sign_approve.rawTransaction)
-print('Approved Spender Token Wait 10 Second...')
-time.sleep(10)
+print('Approved Spender Token Wait 15 Second...')
+time.sleep(15)
 print('')  
 
 #estimate gas limit contract
@@ -139,31 +166,7 @@ pc.copy(txid)
 #swapping weth to eth
 print('Swapping WETH To ETH In 20 Second...')
 time.sleep(20)
-wbnb_balance = contractwrapped.functions.balanceOf(sender).call()
-gaswd_tx = contractwrapped.functions.withdraw(wbnb_balance).buildTransaction({
-    'chainId': chainId,
-    'from': sender,
-    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
-    'nonce': web3.eth.getTransactionCount(sender)
-})
-gasWDAmount = web3.eth.estimate_gas(gaswd_tx)
-wbnb_tx = contractwrapped.functions.withdraw(wbnb_balance).buildTransaction({
-    'chainId': chainId,
-    'from': sender,
-    'gas': gasWDAmount,
-    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
-    'nonce': web3.eth.getTransactionCount(sender)
-})
-#sign the transaction
-signwd_txn = web3.eth.account.signTransaction(wbnb_tx, senderkey)
-#send transaction
-txwd_hash = web3.eth.sendRawTransaction(signwd_txn.rawTransaction)
-#get transaction hash
-txidwd = str(web3.toHex(txwd_hash))
-print('')
-print('Transaction Success TX-ID Copied To Clipboard')
-print(txidwd)
-pc.copy(txidwd)
+SwapToETH()
 print('Update Current Balance In 30 Second...')
 time.sleep(30)
 print('')
