@@ -17,10 +17,10 @@ web3 = Web3(Web3.HTTPProvider(inputrpc))
 #chainId = 56 #you can find chainid on chainlist.org
 chainId = int(input("Input Chain ID Blockchain Network : "))
 
-ctypes.windll.kernel32.SetConsoleTitleW("Create Pool On DEX Uniswap V3")
+ctypes.windll.kernel32.SetConsoleTitleW("Create Pool On DEX PancakeSwap V3")
 print('')
-print('Create Pool On DEX Uniswap V3')
-print('This Support Ethereum, Arbitrum, Optimism, Polygon, Base, Binance Smartchain, Avalanche, & Celo')
+print('Create Pool On DEX PancakeSwap V3')
+print('This Support Ethereum, Binance Smart Chain, Polygon zkEVM, Linea & Base')
 print('')
 
 #connecting web3
@@ -53,7 +53,7 @@ print('')
 def UpdateBalance():
     balance = web3.eth.get_balance(sender)
     balance_bnb = web3.fromWei(balance,'ether')
-    print('Your Balance' ,balance_bnb, 'ETH')
+    print('Your Balance' ,balance_bnb, 'BNB')
     
 UpdateBalance()
 
@@ -72,7 +72,7 @@ gasAmount = web3.eth.estimate_gas(gas_tx)
 print('')
 gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
-print('Transaction Fee :' ,Caclfee, 'ETH')
+print('Transaction Fee :' ,Caclfee, 'BNB')
 
 token_tx = contractfactory.functions.createPool(wrapped, tokenaddr, 500).buildTransaction({
     'chainId': chainId,
