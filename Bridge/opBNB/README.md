@@ -1,3 +1,4 @@
+- This Using Official [opBNB Bridge](https://opbnb-bridge.bnbchain.org/)
 # List Token Address L1 & L2
 ```
 BTCB L1 = 0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c
