@@ -1,1 +1,4 @@
 - [Camelot Router V3](https://docs.camelot.exchange/contracts/amm-v3/router)
+- Swap Buy/Sell
+- Create Pool Pair
+- Add/Remove Liquidity
