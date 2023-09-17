@@ -1,1 +1,4 @@
 - [PancakeSwap Contract V3](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v3-contracts)
+- Swap Buy/Sell
+- Create Pool Pair
+- Add/Remove Liquidity
