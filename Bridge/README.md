@@ -1,1 +1,1 @@
-
+- This Using Official [opBNB Bridge](https://opbnb-bridge.bnbchain.org/)
