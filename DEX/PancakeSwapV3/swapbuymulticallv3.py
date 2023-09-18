@@ -66,11 +66,11 @@ inputamount = float(input("Enter Amount Of You Want To Buy [BNB] : ")) #ex 1 / 0
 amount = web3.toWei(float(inputamount), 'ether')
 deadline = int(time.time()) + 1000000
 
-txSwap = contractrouter.encodeABI(fn_name="exactInputSingle", args=[(wrapped, tokenaddr, 500, sender, amount, 0, 0, deadline)])
+txSwap = contractrouter.encodeABI(fn_name="exactInputSingle", args=[(wrapped, tokenaddr, 500, sender, amount, 0, 0)])
 txCall = [txSwap]
 
 #estimate gas limit contract
-gas_tx = contractrouter.functions.multicall(txCall).buildTransaction({
+gas_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'value': amount,
@@ -88,7 +88,7 @@ Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'BNB')
 print('Processing Swap Buy :' ,amountFromWei, 'BNB FOR TOKEN' ,tokenName)
 
-token_tx = contractrouter.functions.multicall(txCall).buildTransaction({
+token_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'value': amount,
