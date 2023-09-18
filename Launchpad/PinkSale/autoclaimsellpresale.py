@@ -86,9 +86,8 @@ def ClaimPresale():
     txid = str(web3.toHex(tx_hash))
     print('')
     print('Claimed Success TX-ID : ', txid)
-
-#sell
-def SellNow():
+#approve token to sell
+def Approved():
     nonce2 = web3.eth.getTransactionCount(sender)
     token_approve = token_contract.functions.balanceOf(sender).call()
 
@@ -119,12 +118,13 @@ def SellNow():
 
     sign_approve = web3.eth.account.sign_transaction(Approve, senderkey)
     web3.eth.send_raw_transaction(sign_approve.rawTransaction)
-    print('Approved Spender Token Wait 5 Second...')
-    time.sleep(5)
+    print('Approved Spender Token Wait 10 Second...')
+    time.sleep(10)
     print('')
-
+    
+#sell
+def SellNow():
     deadline = int(time.time()) + 1000000
-
     #estimate gas limit contract
     nonce3 = web3.eth.getTransactionCount(sender)
     gas_tx = contractrouter.functions.swapExactTokensForETHSupportingFeeOnTransferTokens(token_approve, 0, [tokenaddr, wrapped], sender, deadline).buildTransaction({
@@ -185,6 +185,7 @@ def foundFinalized(event):
         ClaimPresale()
         print('Wait 5 Second To Sell')
         time.sleep(5)
+        Approved()
         SellNow()
         print('Update Current Balance In 10 Second...')
         time.sleep(10)
