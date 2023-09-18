@@ -86,6 +86,7 @@ def ClaimPresale():
     txid = str(web3.toHex(tx_hash))
     print('')
     print('Claimed Success TX-ID : ', txid)
+    
 #approve token to sell
 def Approved():
     nonce2 = web3.eth.getTransactionCount(sender)
@@ -183,8 +184,8 @@ def foundFinalized(event):
         print('Presale Has Been Finalized...')
         print('Processing Claim Presale')
         ClaimPresale()
-        print('Wait 5 Second To Sell')
-        time.sleep(5)
+        print('Wait 10 Second To Sell')
+        time.sleep(10)
         Approved()
         SellNow()
         print('Update Current Balance In 10 Second...')
