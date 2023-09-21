@@ -95,7 +95,7 @@ def ApproveWBNB():
     #calculate transaction fee
     print('')
     print('Processing Approve Spender WBNB...')
-    #gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
+    gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
     Caclfee = web3.fromWei(gasPrice*gasApprove, 'gwei')
     print('Transaction Fee :' ,Caclfee, 'BNB')
 
@@ -127,7 +127,7 @@ def ApproveToken():
     #calculate transaction fee
     print('')
     print('Processing Approve Spender Token...')
-    #gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
+    gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
     Caclfee = web3.fromWei(gasPrice*gasApprove, 'gwei')
     print('Transaction Fee :' ,Caclfee, 'BNB')
 
