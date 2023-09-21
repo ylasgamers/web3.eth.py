@@ -1,4 +1,4 @@
 - [Uniswap Contract V3](https://docs.uniswap.org/contracts/v3/reference/deployments)
 - Swap Buy/Sell
-- Create Pool Pair
+- Create & Initialize Pool Pair
 - Add/Remove Liquidity
