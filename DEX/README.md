@@ -1,7 +1,7 @@
 # This DEX List
 - PancakeSwap V2 & V3
 - Uniswap V2 & V3
-- Sushiswap
+- Sushiswap V2
 - Quickswap V2
 - Camelot V2 & V3
 - Other DEX
