@@ -4,7 +4,7 @@
 - Sushiswap V2
 - Quickswap V2
 - Camelot V2 & V3
-- Other DEX
+- Other DEX V2
 
 # List Factory & Router Address DEX
 - [PancakeSwap Factory V2](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v2-contracts/factory-v2)
