@@ -71,7 +71,7 @@ UpdateBalance()
 print('')
 
 #estimate gas limit contract
-gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, 500, pricex96).buildTransaction({
+gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, 500, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
@@ -85,7 +85,7 @@ gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'BNB')
 
-token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, 500, pricex96).buildTransaction({
+token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, 500, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gas': gasAmount,
