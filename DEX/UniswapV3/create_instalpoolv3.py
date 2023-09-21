@@ -71,7 +71,7 @@ UpdateBalance()
 print('')
 
 #estimate gas limit contract
-gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, 500, pricex96).buildTransaction({
+gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, 3000, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
@@ -85,7 +85,7 @@ gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH')
 
-token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, 500, pricex96).buildTransaction({
+token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, 3000, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gas': gasAmount,
@@ -101,7 +101,7 @@ tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
 #get transaction hash
 txid = str(web3.toHex(tx_hash))
 print('')
-PoolAddr = contractfactory.functions.getPool(tokenaddr, wrapped, 500).call()
+PoolAddr = contractfactory.functions.getPool(tokenaddr, wrapped, 3000).call()
 print('Transaction Success TX-ID Copied To Clipboard')
 print(txid)
 pc.copy(txid)
