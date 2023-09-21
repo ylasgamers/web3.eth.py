@@ -1,1 +1,4 @@
 - New Token Scanner On DEX V2
+- PancakeSwap V2
+- Uniswap V2
+- Other DEX V2
