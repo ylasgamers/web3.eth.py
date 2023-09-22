@@ -129,7 +129,7 @@ amount8 = web3.toWei(float(inputamount8), 'ether')
 amount9 = web3.toWei(float(inputamount9), 'ether')
 amount10 = web3.toWei(float(inputamount10), 'ether')
 amountall = [amount1,amount2,amount3,amount4,amount5,amount6,amount7,amount8,amount9,amount10] #10 address, if want more send to a lot address, you need modif it
-totaltoken = web3.toWei(float(inputamount*10), 'ether') #calc total token send ex inputamount*10 [10 = 10 address]
+totaltoken = web3.toWei(float(amount1+amount2+amount3+amount4+amount5+amount6+amount7+amount8+amount9+amount10), 'ether') #calc total token
 
 #estimate gas limit contract
 nonce2 = web3.eth.getTransactionCount(sender)
