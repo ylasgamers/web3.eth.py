@@ -47,6 +47,7 @@ python -m pip install web3==5.28.0
 python -m pip install py-solc-x
 ```
 - For Android Using Termux Download [Here](https://f-droid.org/repo/com.termux_118.apk)
+- After Install You Need Setting Allow App Permission Stroage/Files & Media
 ```
 pkg update && upgrade
 pkg install tur-repo
@@ -55,6 +56,11 @@ pip install pyperclip==1.8.2
 pip install requests==2.27.1
 pip install web3==5.28.0
 pip install py-solc-x
+```
+- How Run ? Example You Put yourfile.py On Folder /sdcard/Download
+```
+cd /sdcard/Download enter
+python yourfile.py enter
 ```
 
 # Note :
