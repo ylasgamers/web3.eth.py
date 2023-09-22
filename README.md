@@ -51,6 +51,10 @@ python -m pip install py-solc-x
 pkg update && upgrade
 pkg install tur-repo
 pkg install python-is-python3.7
+pip install pyperclip==1.8.2
+pip install requests==2.27.1
+pip install web3==5.28.0
+pip install py-solc-x
 ```
 
 # Note :
