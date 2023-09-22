@@ -1,1 +1,4 @@
-
+- Swap Buy/Sell On DEX V2
+- Swap Buy Token
+- Swap Sell All Amount Token
+- Swap Sell Custom Amount Token
