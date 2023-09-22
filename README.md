@@ -47,7 +47,7 @@ python -m pip install web3==5.28.0
 python -m pip install py-solc-x
 ```
 - For Android Using Termux Download [Here](https://f-droid.org/repo/com.termux_118.apk)
-- After Install You Need Setting Allow App Permission Stroage/Files & Media
+- After Install You Need Setting Allow App Permission Storage/Files & Media
 ```
 pkg update && upgrade
 pkg install tur-repo
