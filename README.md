@@ -46,6 +46,12 @@ python -m pip install requests==2.27.1
 python -m pip install web3==5.28.0
 python -m pip install py-solc-x
 ```
+- For Android Using Termux Download [Here](https://f-droid.org/repo/com.termux_118.apk)
+```
+pkg update && upgrade
+pkg install tur-repo
+pkg install python-is-python3.7
+```
 
 # Note :
 - For Multisender This Using Contract [Disperse.app](https://disperse.app/)
