@@ -129,7 +129,7 @@ def CallMulticall():
     token_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
         'chainId': chainId,
         'from': sender,
-        'gas': gasAmount,
+        'gas': gasAmount+50000,
         'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
         'nonce': web3.eth.getTransactionCount(sender)
     })
