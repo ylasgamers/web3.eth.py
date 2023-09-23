@@ -1,4 +1,8 @@
 # Web3 ETH Python Basic
+# OS Tested
+- Windows
+- Android
+
 # List
 - Single & Multisender & Revoke
 - Deploy Contract/Standart Token, NFT, UniswapV2Factory & UniswapV2Router02
@@ -11,25 +15,15 @@
 - Friend.tech, Post.tech, Friend3.group New User Scanner & Sniper
 
 # Blockchain List
-- Ethereum Goerli Testnet
-- Ethereum Mainnet
+- Ethereum Testnet & Mainnet
 - Binance Smart Chain Testnet & Mainnet
-- Polygon Mumbai Testnet
-- Polygon Mainnet
+- Polygon Testnet & Mainnet
 - Polygon zkEVM Testnet & Mainnet
-- Optimism Goerli Testnet
-- Optimism Mainnet
+- Optimism Testnet & Mainnet
 - Avalanche Testnet & Mainnet
 - Arbitrum One Testnet & Mainnet
-- Base Goerli Testnet
-- Base Mainnet
+- Base Testnet & Mainnet
 - opBNB Testnet & Mainnet
-- Celo Testnet & Mainnet
-- Cronos Testnet & Mainnet
-- Fantom Testnet & Mainnet
-- Gnosis Chain Testnet & Mainnet
-- Boba Testnet & Mainnet
-- Moonbeam Testnet & Mainnet
 - Other Chain
 
 # For RPC & ChainID List
