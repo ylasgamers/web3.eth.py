@@ -106,17 +106,16 @@ def CallMulticall():
     txCall = [txSwap, txWETH]  
 
     #estimate gas limit contract
-    est = web3.toWei(float(0.0000001), 'ether')
-    txEncode2 = contractrouter.encodeABI(fn_name="exactInputSingle", args=[(wrapped, tokenaddr, 3000, contract_router, est, 0, 0)])
-    txEstimategas = [txEncode2, txWETH]
-    gas_tx = contractrouter.functions.multicall(deadline, txEstimategas).buildTransaction({
+    txEsGas = contractrouter.encodeABI(fn_name="exactInputSingle", args=[(tokenaddr, wrapped, 3000, contract_router, amount, 0, 0)])
+    txEsGasCall = [txEsGas, txWETH]  
+
+    gas_tx = contractrouter.functions.multicall(deadline, txEsGasCall).buildTransaction({
         'chainId': chainId,
         'from': sender,
-        'value': est,
         'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
         'nonce': web3.eth.getTransactionCount(sender)
     })
-    gasAmount = web3.eth.estimate_gas(gas_tx)
+    gasAmount = web3.eth.estimateGas(gas_tx)
 
     #calculate transaction fee
     print('')
@@ -129,7 +128,7 @@ def CallMulticall():
     token_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
         'chainId': chainId,
         'from': sender,
-        'gas': gasAmount+50000,
+        'gas': gasAmount,
         'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
         'nonce': web3.eth.getTransactionCount(sender)
     })
