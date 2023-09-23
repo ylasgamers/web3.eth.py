@@ -1,7 +1,7 @@
 # Web3 ETH Python Basic
 # OS Tested
-- Windows
-- Android
+- Windows 7/10/11
+- Android 7 - 12
 
 # List
 - Single & Multisender & Revoke
