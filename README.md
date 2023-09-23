@@ -56,7 +56,6 @@ cd /sdcard/Download enter
 python yourfile.py enter
 *Note : Remove ctypes.windll.kernel32.SetConsoleTitleW & pc.copy on inside file .py because this not work on android
 ```
-Example :
 [![YLAS GAMERS](https://i.ibb.co/3YkH1LK/Untitled.png)](https://github.com/ylasgamers/web3.eth.py)
 
 # Note :
