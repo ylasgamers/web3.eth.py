@@ -39,7 +39,7 @@ python -m pip install requests==2.27.1
 python -m pip install web3==5.28.0
 python -m pip install py-solc-x
 ```
-- For Android Using Termux Download [Here](https://f-droid.org/repo/com.termux_118.apk)
+- For Android Using Termux Download [Here](https://f-droid.org/repo/com.termux_118.apk) [Tutorial](https://mega.nz/file/Y1g0xKDL#lyusdWOXV1YG38ikxQ2pr7fADXPFkPEtoYHNgqAo-mY)
 - After Install You Need Setting Allow App Permission Storage/Files & Media
 ```
 pkg update && upgrade
