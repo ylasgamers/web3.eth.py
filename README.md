@@ -61,6 +61,7 @@ pip install py-solc-x
 ```
 cd /sdcard/Download enter
 python yourfile.py enter
+*Note : Remove ctypes.windll.kernel32.SetConsoleTitleW & pc.copy on inside file .py because this not work on android
 ```
 
 # Note :
