@@ -31,7 +31,7 @@
 - [Thirdweb](https://thirdweb.com/chainlist)
 
 # Requirements
-- Need Python 3.7.2+ [Tutorial](https://mega.nz/embed/sthm2AbT#_fjOr9MztzUYnn5gbsce0GdXUZPpcuSAGJPJicJYo88)
+- Need Python 3.7.2 [Tutorial](https://mega.nz/embed/sthm2AbT#_fjOr9MztzUYnn5gbsce0GdXUZPpcuSAGJPJicJYo88)
 ```
 python -m pip install --upgrade pip
 python -m pip install pyperclip==1.8.2
