@@ -1,4 +1,4 @@
 - [Camelot Router V3](https://docs.camelot.exchange/contracts/amm-v3/router)
 - Swap Buy/Sell
-- Create & Initialize Pool Pair
+- Create & Initialize Pool Pair [ create_instalpoolv3.py for token/weth pool/pair ] [ create_instalpoolv3x.py for weth/token pool/pair ]
 - Add/Remove Liquidity
