@@ -1,0 +1,1 @@
+- Deploy ERC20TokenStandart With SmartContract
