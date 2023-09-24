@@ -1,6 +1,6 @@
 - [Uniswap Contract V3](https://docs.uniswap.org/contracts/v3/reference/deployments)
 - Swap Buy/Sell
-- Create & Initialize Pool Pair
+- Create & Initialize Pool Pair [ create_instalpoolv3.py for token/weth pool/pair ] [ create_instalpoolv3x.py for weth/token pool/pair ]
 - Add/Remove Liquidity [ addliquidityv3.py for token/weth pool/pair ] [ addliquidityv3x.py for weth/token pool/pair ]
 
 - Calculating Price Pool/Pair Token/WETH
