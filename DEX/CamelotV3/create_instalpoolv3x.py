@@ -19,7 +19,7 @@ chainId = int(input("Input Chain ID Blockchain Network : "))
 
 ctypes.windll.kernel32.SetConsoleTitleW("Create & Initialize Pool On DEX Camelot V3")
 print('')
-print('Create & Initialize On DEX Camelot V3 Pair/Pool Token/WETH')
+print('Create & Initialize On DEX Camelot V3 Pair/Pool WETH/Token')
 print('This Support Arbitrum')
 print('')
 
@@ -36,13 +36,13 @@ senderkey = input("Enter Your Privatekey abcde12345...: ")
 tokenaddr = web3.toChecksumAddress(input('Enter Token Address 0x...: '))
 contract_router = web3.toChecksumAddress(input("Enter Contract Address Router DEX : "))
 contract_nonfungible = web3.toChecksumAddress(input("Enter Contract Address NonFungiblePositionManager DEX : "))
-print('calculate price per 1 token sqrtPriceX96^2 / 2^192 * 10^token0_decimal / 10^token1_decimal')
-print('ex token0 = your_token //decimal 18')
-print('ex token1 = weth // decimal 18')
-print('ex sqrtPriceX96 = 1000000000000000000000000000')
-print('1000000000000000000000000000^2 / 2^192 * 10^18 / 10^18 = 0.00015930919')
-print('1 your_token will be 0.00015930919 eth')
-print('your will be mint liquidity 1 your_token & 0.00015930919 eth')
+print("calculate price per 1 weth formula = sqrtPriceX96^2 / 2^192 * 10^token0_decimal / 10^token1_decimal")
+print("ex token0 = weth //decimal 18")
+print("ex token1 = your_token // decimal 18")
+print("ex sqrtPriceX96 = 10000000000000000000000000000000")
+print("10000000000000000000000000000000^2 / 2^192 * 10^18 / 10^18 = 15930.9191113")
+print("1 eth will be 15930.9191113 your_token")
+print("your will be mint liquidity 15930.9191113 your_token & 1 eth")
 pricex96 = input("Enter Price sqrtPriceX96 :")
 #gasAmount = 300000 #gas limit // change if transaction fail
 #gasPrice = 1 #gas price
@@ -71,7 +71,7 @@ UpdateBalance()
 print('')
 
 #estimate gas limit contract
-gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, pricex96).buildTransaction({
+gas_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
@@ -85,7 +85,7 @@ gasPrice = web3.fromWei(web3.eth.gas_price, 'gwei')
 Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH')
 
-token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(tokenaddr, wrapped, pricex96).buildTransaction({
+token_tx = contractnonfungible.functions.createAndInitializePoolIfNecessary(wrapped, tokenaddr, pricex96).buildTransaction({
     'chainId': chainId,
     'from': sender,
     'gas': gasAmount,
@@ -101,7 +101,7 @@ tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
 #get transaction hash
 txid = str(web3.toHex(tx_hash))
 print('')
-PoolAddr = contractfactory.functions.poolByPair(tokenaddr, wrapped).call()
+PoolAddr = contractfactory.functions.poolByPair(wrapped, tokenaddr).call()
 print('Transaction Success TX-ID Copied To Clipboard')
 print(txid)
 pc.copy(txid)
