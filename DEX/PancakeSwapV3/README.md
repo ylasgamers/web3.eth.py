@@ -1,6 +1,6 @@
 - [PancakeSwap Contract V3](https://docs.pancakeswap.finance/developers/smart-contracts/pancakeswap-exchange/v3-contracts)
 - Swap Buy/Sell
-- Create & Initialize Pool Pair
+- Create & Initialize Pool Pair [ create_instalpoolv3.py for token/wbnb pool/pair ] [ create_instalpoolv3x.py for wbnb/token pool/pair ]
 - Add/Remove Liquidity [ addliquidityv3.py for token/wbnb pool/pair ] [ addliquidityv3x.py for wbnb/token pool/pair ]
 
 - Calculating Price Pool/Pair Token/WBNB
