@@ -1,5 +1,5 @@
 # List For User & Owner
-- Buy/Contribute Presale (Fair Launch)
+- Buy/Contribute Presale (Fair Launch & Soft/Hardcap)
 - Claim Presale (After Owner Finalize Presale)
 - Claim & Autosell Token Presale (After Owner Finalize Presale)
 - Emergency Withdraw Presale (If You Want Cancel Contribution Presale)
