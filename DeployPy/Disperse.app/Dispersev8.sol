@@ -7,6 +7,7 @@ interface IERC20 {
 }
 
 contract Disperse {
+	constructor(){}
     function disperseEther(address[] memory recipients, uint256[] memory values) external payable {
         for (uint256 i = 0; i < recipients.length; i++)
         payable(recipients[i]).transfer(values[i]);
