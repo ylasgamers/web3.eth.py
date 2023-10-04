@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.21;
 
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
@@ -80,7 +80,6 @@ library SafeMath {
 
 contract ERC20TOKEN is IERC20, Ownable {
     using SafeMath for uint256;
-
 
     mapping(address => uint256) private _balances;
     mapping(address => bool) _isFeeExempt;
