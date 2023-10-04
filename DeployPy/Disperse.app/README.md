@@ -1,1 +1,1 @@
-- Dispersev8.sol = Optimized/Update With Compiler Solidity v0.8.0
+- Dispersev8.sol = Optimized/Update With Compiler Solidity v0.8.17
