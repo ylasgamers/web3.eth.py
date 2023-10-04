@@ -8,7 +8,7 @@ import os
 import sys
 import ctypes
 import pyperclip as pc
-install_solc('0.8.0')
+install_solc('0.8.21')
 
 with open("ERC20TOKEN.sol", "r") as file:
     erc20token_file = file.read()
@@ -32,7 +32,7 @@ compiled_sol = compile_standard(
             }
         },
     },
-    solc_version="0.8.0",
+    solc_version="0.8.21",
 )
 #print(compiled_sol)
 #with open("compiled_code.json", "w") as file:
