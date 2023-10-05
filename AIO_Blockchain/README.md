@@ -6,4 +6,4 @@
 - Single Send Token To Other Address [Example](https://mega.nz/embed/ooZnRCbT#crex2S1b-XsaLxxKWuqfOMtLbEpwHm2OBbaLpL1w1jw)
 - Multisender Token Same Amount To Multiple Address [Example](https://mega.nz/embed/A5Rh3DbD#ypXIX9WKthRPn9MBsvWi96EDY3ok6dU2n7Rr356hAcs)
 - Multisender Token Different Amount To Multiple Address [Example](https://mega.nz/embed/hsoQnCDL#RSAtNJ-bVESx9rN1U1mBN088V5GoXLrW6D-ZJXdPTm8)
-- Revoke Contract Address
+- Revoke Address/Contract Address
