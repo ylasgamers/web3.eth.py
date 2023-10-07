@@ -1,1 +1,2 @@
-# Generate Random ETH Address & Privatekey
+- Generate Random ETH Address With Privatekey Only + Have Logger Text Version
+- Generate Random ETH Address With 12 Word Phrase/Mnemonic & Privatekey Only + Have Logger Text Version
