@@ -1,2 +1,2 @@
 - Generate Random TRON Address With Privatekey + Have Logger Text Version
-- Generate Random TRON Address With Word Phrase/Mnemonic + Have Logger Text Version
+- Generate Random TRON Address With 12 Word Phrase/Mnemonic + Have Logger Text Version
