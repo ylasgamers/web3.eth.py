@@ -1,3 +1,14 @@
+# OS Tested
+- Windows 7/10/11
+- Android 7 - 12
+
+# List
+- Send Single Transaction
+- Generate Vanity TRON Privatekey / Mnemonic
+
+# Blockchain List
+- TRON Testnet (Nile) & Mainnet
+  
 # Requirements
 - Need Python 3.7.2
 ```
