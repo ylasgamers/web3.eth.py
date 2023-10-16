@@ -5,6 +5,7 @@
 # List
 - Send Single Transaction
 - Generate Vanity TRON Privatekey / Mnemonic
+- Deploy Contract/Standart Token
 
 # Blockchain List
 - TRON Testnet (Nile) & Mainnet
