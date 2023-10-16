@@ -1,2 +1,2 @@
 # List
-- ERC20 Standart Token
+- TRC20 Standart Token
