@@ -5,6 +5,7 @@
 # List
 - Send Single Transaction
 - Send Token/TRC20 Token Sigle Transaction
+- Multisend Transaction / Multisend Token/TRC20
 - Generate Vanity TRON Privatekey / Mnemonic
 - Deploy Contract/Standart Token
 
