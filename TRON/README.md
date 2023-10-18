@@ -31,6 +31,7 @@ pkg install tur-repo
 pkg install python-is-python3.7
 pip install pyperclip==1.8.2
 pip install requests==2.27.1
+pip install eth_account==0.5.9
 pip install tronpy
 pip install tronpy[mnemonic]
 pip install py-solc-x
