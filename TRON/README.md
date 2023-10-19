@@ -8,6 +8,7 @@
 - Multisend Transaction / Multisend Token/TRC20
 - Generate Vanity TRON Privatekey / Mnemonic
 - Deploy Contract/Standart Token
+- Revoke Address/Contract Address
 
 # Blockchain List
 - TRON Testnet (Nile) & Mainnet
