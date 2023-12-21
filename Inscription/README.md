@@ -1,2 +1,3 @@
 - Inscription Auto Mint With Python
+- This Work Only Chain Similiar Ethereum, Like BSC, Polygon, Arbitrum, Base, OPBNB, Other Chain
 - You Need Setting RPC, ChainID, Address, Privatekey, Code Mint, Total Mint
