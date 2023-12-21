@@ -1,0 +1,2 @@
+- Inscription Auto Mint With Python
+- You Need Setting RPC, ChainID, Address, Privatekey, Code Mint, Total Mint
