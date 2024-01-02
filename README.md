@@ -1,4 +1,5 @@
 # Web3 ETH Python Basic
+- Free Join [Telegram Group](https://t.me/cryptopyth)
 # OS Tested
 - Windows 7/10/11
 - Android 7 - 12
