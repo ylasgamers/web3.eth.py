@@ -58,6 +58,16 @@ python yourfile.py enter
 *Note : Remove ctypes.windll.kernel32.SetConsoleTitleW & pc.copy on inside file .py because this not work on android
 ```
 [![YLAS GAMERS](https://i.ibb.co/3YkH1LK/Untitled.png)](https://github.com/ylasgamers/web3.eth.py)
+- For Codespace Github [ Use Blank Template ]
+- You Need Install Extension Python Like This
+[![YLAS GAMERS](https://img001.prntscr.com/file/img001/tjRxiDmZSpCQB4qoBPZO8A.png)](https://github.com/ylasgamers/web3.eth.py)
+```
+python -m pip install --upgrade pip
+python -m pip install pyperclip==1.8.2
+python -m pip install requests==2.27.1
+python -m pip install web3==5.28.0
+python -m pip install py-solc-x
+```
 
 # Note :
 - For Multisender This Using Contract [Disperse.app](https://disperse.app/)
