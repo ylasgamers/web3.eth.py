@@ -126,9 +126,20 @@ def CallMulticall():
     print('Transaction Success TX-ID Result...')
     print(txid)
 
-ApproveToken()    
-CallMulticall()    
-print('Update Current Balance In 30 Second...')
-time.sleep(30)
-print('')
-UpdateBalance() #get latest balance
+apprvcheck = int(token_contract.functions.allowance(sender, contract_router).call())
+print(apprvcheck)
+if apprvcheck > amount:
+    print('Already Approved! Processing Sell Token...')
+    CallMulticall()    
+    print('Update Current Balance In 30 Second...')
+    time.sleep(30)
+    print('')
+    UpdateBalance() #get latest balance
+else:
+    ApproveToken()
+    print('Approved! Processing Sell Token...')
+    CallMulticall()    
+    print('Update Current Balance In 30 Second...')
+    time.sleep(30)
+    print('')
+    UpdateBalance() #get latest balance
