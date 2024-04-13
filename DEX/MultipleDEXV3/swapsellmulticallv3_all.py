@@ -127,7 +127,6 @@ def CallMulticall():
     print(txid)
 
 apprvcheck = int(token_contract.functions.allowance(sender, contract_router).call())
-print(apprvcheck)
 if apprvcheck > amount:
     print('Already Approved! Processing Sell Token...')
     CallMulticall()    
