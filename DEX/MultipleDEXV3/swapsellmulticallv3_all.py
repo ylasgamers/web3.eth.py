@@ -22,10 +22,12 @@ feepool = int(config.feepool)
 #============================================================================
 contractrouter = web3.eth.contract(address=contract_router, abi=config.router_abi)
 token_contract = web3.eth.contract(address=tokenaddr, abi=config.tokenabi)
+contractfactory = web3.eth.contract(address=contractrouter.functions.factory().call(), abi=config.factory_abi)
 tokenName = token_contract.functions.name().call()
 tokenSymbol = token_contract.functions.symbol().call()
 tokenDec = token_contract.functions.decimals().call()
 wrapped = contractrouter.functions.WETH9().call()
+getpool = contractfactory.functions.getPool(wrapped, tokenaddr, feepool).call()
 contractwrapped = web3.eth.contract(address=wrapped, abi=config.tokenabi)
 
 #Get balance account
@@ -39,6 +41,21 @@ def UpdateBalance():
     print('Token Balance' ,token_balance, tokenSymbol)
     
 UpdateBalance()
+
+print('Search/Checking Pool...')
+if config.nulladdr == getpool:
+    print("Pool Not Found Or Created/Try Change Fee Pool On Config")
+    exit()
+else:
+    print("Pool Found! With Address : ",getpool)
+
+print('Liquidity Checking...')
+lpcheck = contractwrapped.functions.balanceOf(getpool).call()    
+if 0 < lpcheck:
+    print('Liquidity Found! With', lpcheck / 10**contractwrapped.functions.decimals().call(), contractwrapped.functions.symbol().call())
+else:
+    print('Liquidity Empty!')
+    exit()
 
 print('')
 inputamount = token_contract.functions.balanceOf(sender).call() / (10**tokenDec)
