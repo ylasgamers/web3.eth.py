@@ -1,7 +1,7 @@
 # Mint NFTDrop On Opensea
-- Only Public NFTDrop
+- Only Public NFTDrop Work All EVM Chain
 - You Can Mint Multiple Address/Wallet
-- You Need Changed Url RPC, ChainID, NFT Address, Fee Recipient Address, & NFTDrop Contract Address On config.py
+- You Need Changed Url RPC, ChainID, & NFT Address On config.py
 - You Need Edit Address/Wallet, Privatekey, & Total Mint
 ```
 #set your address & privatekey & total mint , this example 2 address/wallet
