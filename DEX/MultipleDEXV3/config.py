@@ -14,11 +14,11 @@ pvkey = "privatekey"
 #set token address
 tokenaddr = web3.to_checksum_dddress("0xtoken_addr")
 #set router address v3 dex
-#ex uniswap v3 https://docs.uniswap.org/contracts/v3/reference/deployments/
+#list address router see on https://github.com/ylasgamers/web3.eth.py/blob/main/DEX/MultipleDEXV3/README.md
 routeraddr = web3.to_checksum_dddress("0xrouter_addr")
 #set fee pool token
 #ex 0.01% = 100 / 0.05% = 500 / 0.3% = 3000 / 1% = 10000
-feepool = "10000"
+feepool = "10000" #you need change if fee pool different
 #approve unlimited
 apprv = int("115792089237316195423570985008687907853269984665640564039457584007913129639935")
 
