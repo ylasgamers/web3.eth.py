@@ -9,10 +9,11 @@ chainId = int(config.chainid)
 print("Swap Buy DEX V3 | Works Multiple DEX")
 
 #connecting web3
-if  web3.isConnected() == True:
+if  web3.is_connected() == True:
     print("Web3 Connected...\n")
-else :
+else:
     print("Error Connecting Please Try Again...")
+    exit()
 
 sender = config.sender
 senderkey = config.pvkey
@@ -34,7 +35,7 @@ contractwrapped = web3.eth.contract(address=wrapped, abi=config.tokenabi)
 print('')
 def UpdateBalance():
     balance = web3.eth.get_balance(sender)
-    balance_bnb = web3.fromWei(balance,'ether')
+    balance_bnb = web3.from_wei(balance,'ether')
     print('Your Balance' ,balance_bnb, 'ETH')
     #Get token balance account
     token_balance = token_contract.functions.balanceOf(sender).call() / (10**tokenDec)
@@ -59,47 +60,47 @@ else:
 
 print('')
 inputamount = float(input("Enter Amount Of You Want To Buy [ETH] : ")) #ex 1 / 0.1 / 0.001 / 0.0001 / 0.00001
-amount = web3.toWei(float(inputamount), 'ether')
+amount = web3.to_wei(float(inputamount), 'ether')
 deadline = int(time.time()) + 1000000
 
-txSwap = contractrouter.encodeABI(fn_name="exactInputSingle", args=[(wrapped, tokenaddr, feepool, sender, amount, 0, 0)])
+txSwap = contractrouter.encode_abi(fn_name="exactInputSingle", args=[(wrapped, tokenaddr, feepool, sender, amount, 0, 0)])
 txCall = [txSwap]
 
 #estimate gas limit contract
-gas_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
+gas_tx = contractrouter.functions.multicall(deadline, txCall).build_transaction({
     'chainId': chainId,
     'from': sender,
     'value': amount,
-    'gasPrice': web3.eth.gasPrice, #web3.toWei(gasPrice,'gwei'),
-    'nonce': web3.eth.getTransactionCount(sender)
+    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+    'nonce': web3.eth.get_transaction_count(sender)
 })
 gasAmount = web3.eth.estimate_gas(gas_tx)
 #print(gasAmount)
 
 #calculate transaction fee
 print('')
-amountFromWei = web3.fromWei(amount, 'ether')
-gasPrice = web3.fromWei(web3.eth.gasPrice, 'gwei')
-Caclfee = web3.fromWei(gasPrice*gasAmount, 'gwei')
+amountFromWei = web3.from_wei(amount, 'ether')
+gasPrice = web3.from_wei(web3.eth.gas_price, 'gwei')
+Caclfee = web3.from_wei(gasPrice*gasAmount, 'gwei')
 print('Transaction Fee :' ,Caclfee, 'ETH')
 print('Processing Swap Buy :' ,amountFromWei, 'ETH For Token' ,tokenName)
 
-token_tx = contractrouter.functions.multicall(deadline, txCall).buildTransaction({
+token_tx = contractrouter.functions.multicall(deadline, txCall).build_transaction({
     'chainId': chainId,
     'from': sender,
     'value': amount,
     'gas': gasAmount,
-    'gasPrice': web3.eth.gasPrice, #web3.toWei(gasPrice,'gwei'),
-    'nonce': web3.eth.getTransactionCount(sender)
+    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+    'nonce': web3.eth.get_transaction_count(sender)
 })
 
 #sign the transaction
-sign_txn = web3.eth.account.signTransaction(token_tx, senderkey)
+sign_txn = web3.eth.account.sign_transaction(token_tx, senderkey)
 #send transaction
-tx_hash = web3.eth.sendRawTransaction(sign_txn.rawTransaction)
+tx_hash = web3.eth.send_raw_transaction(sign_txn.rawTransaction)
 
 #get transaction hash
-txid = str(web3.toHex(tx_hash))
+txid = str(web3.to_hex(tx_hash))
 print('')
 print('Transaction Success TX-ID Result...')
 print(txid)
