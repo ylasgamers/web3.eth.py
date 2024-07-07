@@ -75,7 +75,7 @@ def ApproveToken():
     #calculate transaction fee
     print('')
     print('Processing Approve Spender Token...')
-    gasPrice = web3.from_wei(web3.eth.gasPrice, 'gwei')
+    gasPrice = web3.from_wei(web3.eth.gas_price, 'gwei')
     Caclfee = web3.from_wei(gasPrice*gasApprove, 'gwei')
     print('Transaction Fee :' ,Caclfee, 'ETH')
 
@@ -119,7 +119,7 @@ def CallMulticall():
 
     #calculate transaction fee
     print('')
-    gasPrice = web3.from_wei(web3.eth.gasPrice, 'gwei')
+    gasPrice = web3.from_wei(web3.eth.gas_price, 'gwei')
     Caclfee = web3.from_wei(gasPrice*gasAmount, 'gwei')
     print('Transaction Fee :' ,Caclfee, 'ETH')
     print('Processing Swap Sell :' ,inputamount ,tokenName, 'To ETH')
