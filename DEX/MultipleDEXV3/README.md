@@ -1,7 +1,14 @@
 # This Work Multiple DEX V3
+- Min Python 3.8 - 3.10
 - Work Like Uniswap/Pancakeswap/Other DEX V3 But Not All
 - You Need Setting On File config.py Like RPC Url, ChainID, Address, Privatekey, Token Address, Router Address DEX V3, & Fee Pool Liquidity
 - Maybe I Will Add More DEX Support Later
+
+```
+Requirements
+- pip install requests
+- pip install web3
+```
 
 ```
 #Uniswap SwapRouter https://docs.uniswap.org/contracts/v3/reference/deployments/
