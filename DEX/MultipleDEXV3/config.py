@@ -6,16 +6,16 @@ web3 = Web3()
 #set rpc url+chain id
 rpcurl = "https://base-pokt.nodies.app"
 chainid = "8453"
-nulladdr = web3.toChecksumAddress("0x0000000000000000000000000000000000000000")
+nulladdr = web3.to_checksum_dddress("0x0000000000000000000000000000000000000000")
 #set your address evm
-sender = web3.toChecksumAddress("0xyour_addr")
+sender = web3.to_checksum_dddress("0xyour_addr")
 #set your privatekey
 pvkey = "privatekey"
 #set token address
-tokenaddr = web3.toChecksumAddress("0xtoken_addr")
+tokenaddr = web3.to_checksum_dddress("0xtoken_addr")
 #set router address v3 dex
 #ex uniswap v3 https://docs.uniswap.org/contracts/v3/reference/deployments/
-routeraddr = web3.toChecksumAddress("0xrouter_addr")
+routeraddr = web3.to_checksum_dddress("0xrouter_addr")
 #set fee pool token
 #ex 0.01% = 100 / 0.05% = 500 / 0.3% = 3000 / 1% = 10000
 feepool = "10000"
