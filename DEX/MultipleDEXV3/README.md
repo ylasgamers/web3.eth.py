@@ -11,7 +11,7 @@ Requirements
 ```
 
 ```
-#Uniswap SwapRouter https://docs.uniswap.org/contracts/v3/reference/deployments/
+#Uniswap SwapRouter02 https://docs.uniswap.org/contracts/v3/reference/deployments/
 #ETH, Arbitrum, Optimism, Polygon = 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45
 #BNB = 0xB971eF87ede563556b2ED4b1C0b0019111Dd85d2
 #Base = 0x2626664c2603336E57B271c5C0b26F421741e481
