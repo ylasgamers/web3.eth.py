@@ -1,5 +1,5 @@
 - Recomended Using Python 3.10
-- For Windows [Download Here](https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe) [Scrool Down]
+- For Windows [Download Here](https://www.python.org/downloads/release/python-3100/) [Scrool Down]
 ```
 python -m pip install pip --upgrade
 pip install requests
