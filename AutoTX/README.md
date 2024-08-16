@@ -5,7 +5,7 @@ python -m pip install pip --upgrade
 pip install requests
 pip install web3
 ```
-- For Termux Android [Download Here](https://f-droid.org/F-Droid.apk)
+- For Termux Android [Download Here](https://f-droid.org/repo/com.termux_1020.apk) [F-Droid Version]
 ```
 After Install Termux, Make Sure Allowed Permission Storage On Setting Termux
 - Instal Python 3.10
