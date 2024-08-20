@@ -8,6 +8,7 @@ python -m pip install pip --upgrade
 pip install requests
 pip install web3
 pip install py-solc-x
+pip install pysha3
 ```
 - For Termux Android [Download Here](https://f-droid.org/repo/com.termux_1020.apk) [F-Droid Version]
 ```
@@ -23,6 +24,7 @@ CARGO_BUILD_TARGET="$(rustc -Vv | grep "host" | awk '{print $2}')" pip install m
 pip install requests
 pip install web3
 pip install py-solc-x
+pip install pysha3
 ```
 - For Ubuntu 18.04 | 20.04 | 22.04 (VPS)
 ```
@@ -36,4 +38,5 @@ apt install python3-pip
 pip install requests
 pip install web3
 pip install py-solc-x
+pip install pysha3
 ```
