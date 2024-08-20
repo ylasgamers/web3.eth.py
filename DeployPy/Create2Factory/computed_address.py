@@ -1,4 +1,3 @@
-import random
 import secrets
 import sha3
 from web3 import Web3
@@ -6,12 +5,12 @@ from solcx import compile_standard, install_solc
 install_solc('0.8.0')
 
 with open("msg.sol", "r") as file:
-    disperse_file = file.read()
+    sol_file = file.read()
 
 compiled_sol = compile_standard(
     {
         "language": "Solidity",
-        "sources": {"msg.sol": {"content": disperse_file}},
+        "sources": {"msg.sol": {"content": sol_file}},
         "settings": {
              "optimizer": {
              "enabled": bool(True),
