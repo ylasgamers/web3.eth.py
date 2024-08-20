@@ -69,7 +69,7 @@ def compute_create2_address(factory_address, salt, bytecode):
 while True:
     random_salt = generate_random_salt()
     filter_salt = random_salt[40:]
-    deployer = '0000000000000000000000000000000000000000' # Replace with deployer/your address without 0x
+    deployer = '0000000000000000000000000000000000000000' # Replace with deployer/your address/zero address without 0x
     salt = deployer+filter_salt
 
     factory_address = '0x0000000000FFe8B47B3e2130213B802212439497'  # Replace with the address of the factory contract
