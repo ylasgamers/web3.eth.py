@@ -42,7 +42,6 @@ def Miner(sender, senderkey):
 
             #get transaction hash
             txid = str(web3.to_hex(tx_hash))
-            transaction_receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
             print('')
             print(f'Mine Success!')
             print(f'TX-ID : {txid}')
