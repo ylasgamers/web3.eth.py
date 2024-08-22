@@ -1,1 +1,1 @@
-
+- You Need Run Both File minerfix.py & minernonce.py
