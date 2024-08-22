@@ -1,4 +1,4 @@
-- You Need Deploy SmartContract First With deploy.py
+- You Need Deploy SmartContract First With deploy.py To Get Contract Address
 - After Deploy SmartContract You Will Get Contract Address, Input In Line 28 On File hypercustom.py Like Below
 ```
 Before : contractaddr = web3.to_checksum_address("input_deployed_contract_address")
