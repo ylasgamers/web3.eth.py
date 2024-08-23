@@ -14,22 +14,22 @@ else:
     print("Error Connecting Please Try Again...")
     exit()
            
-contractabi = json.loads('[{"inputs": [{"internalType": "address","name": "token","type": "address"},{"internalType": "address","name": "recipient","type": "address"}],"name": "withdrawToken","outputs": [],"stateMutability": "nonpayable","type": "function"}]')
+contractabi = json.loads('[{"inputs": [{"internalType": "address","name": "recipient","type": "address"},{"internalType": "uint256","name": "amount","type": "uint256"}],"name": "withdrawToken","outputs": [],"stateMutability": "nonpayable","type": "function"}]')
 contractaddr = web3.to_checksum_address("input_deployed_contract_address")
 contract = web3.eth.contract(address=contractaddr, abi=contractabi)
 
-def WDToken(sender, senderkey):
+def WDToken(sender, senderkey, amount):
     try:
-        tokenaddr = web3.to_checksum_address('0x7E82481423B09c78e4fd65D9C1473a36E5aEd405')
+        amountSend = int(amount * (10**18))
         #estimate gas limit contract
-        gasAmount = contract.functions.withdrawToken(tokenaddr, sender).estimate_gas({
+        gasAmount = contract.functions.withdrawToken(sender, amount).estimate_gas({
             'chainId': web3.eth.chain_id,
             'from': sender,
             'gasPrice': web3.eth.gas_price,
             'nonce': web3.eth.get_transaction_count(sender)
         })
 
-        wd_tx = contract.functions.withdrawToken(tokenaddr, sender).build_transaction({
+        wd_tx = contract.functions.withdrawToken(sender, amount).build_transaction({
             'chainId': web3.eth.chain_id,
             'from': sender,
             'gas': gasAmount,
@@ -60,6 +60,7 @@ def WDToken(sender, senderkey):
             print('')
 
 senderkey = input('Input Privatekey EVM Address Blast : ')
+amount = input('Input Amount Of Token To Withdraw [Fee 0.05 Token] : ')
 sender = web3.eth.account.from_key(senderkey)
 print("")
-WDToken(sender.address, sender.key)
+WDToken(sender.address, sender.key, amount)
