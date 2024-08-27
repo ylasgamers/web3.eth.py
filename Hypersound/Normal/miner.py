@@ -14,7 +14,7 @@ else:
     exit()
            
 tokenabi = json.loads('[{"inputs": [{"internalType": "bytes","name": "extraData","type": "bytes"}],"name": "mine","outputs": [],"stateMutability": "nonpayable","type": "function"}]')
-tokenaddr = web3.to_checksum_address("0x7E82481423B09c78e4fd65D9C1473a36E5aEd405")
+tokenaddr = web3.to_checksum_address("0x22B309977027D4987C3463774D7046d5136CB14a")
 tokenctr = web3.eth.contract(address=tokenaddr, abi=tokenabi)
 
 def Miner(sender, senderkey):
