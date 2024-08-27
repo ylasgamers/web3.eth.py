@@ -1,6 +1,7 @@
 - Auto Mine Hypersound Blast With Web3 Python
 ```
 - Normal [ Normal Mine Every 1 Minutes ]
+- Batch = [ Batch/Multiple Mine Every 1 Minutes ]
 - Spam Nonce [ Mine With Spam Nonce ]
 - Spam Contract [ Multiple Mine With Deployed Smart Contract ]
 ```
