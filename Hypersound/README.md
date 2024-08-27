@@ -3,7 +3,6 @@
 - Normal [ Normal Mine Every 1 Minutes ]
 - Batch [ Batch/Multiple Mine Every 1 Minutes ]
 - Spam Nonce [ Mine With Spam Nonce ]
-- Spam Contract [ Multiple Mine With Deployed Smart Contract ]
 ```
 - Recomended Using Python 3.10
 - For Windows [Download Here](https://www.python.org/downloads/release/python-3100/) [Scrool Down]
