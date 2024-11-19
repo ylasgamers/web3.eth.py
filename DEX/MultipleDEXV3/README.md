@@ -7,7 +7,7 @@
 ```
 Requirements
 - pip install requests
-- pip install web3
+- pip install web3==6.20.1
 ```
 
 ```
