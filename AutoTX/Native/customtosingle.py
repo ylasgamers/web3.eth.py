@@ -9,6 +9,7 @@ print("Transfer All Native Balance From Custom/Spesific Address To Single Addres
 print("Make Sure Already Input PrivateKey Custom/Spesific Address On pvkeylist.txt !")
 print("")
 web3 = Web3(Web3.HTTPProvider(input("Input RPC Url : ")))
+chainId = web3.eth.chain_id
 
 #connecting web3
 if  web3.is_connected() == True:
@@ -20,37 +21,36 @@ else:
 def TransferNative(sender, senderkey, recipient):
     try:
         gasPrice = web3.eth.gas_price
+        nonce = web3.eth.get_transaction_count(sender)
         #estimate gas limit contract
-        gas_tx = {
-            'chainId': web3.eth.chain_id,
+        gasAmount = web3.eth.estimate_gas({
+            'chainId': chainId,
             'from': sender,
             'to': recipient,
-            'value': web3.to_wei(0, 'ether'),
+            'value': web3.eth.get_balance(sender),#web3.to_wei(0, 'ether'),
             'gasPrice': gasPrice,
-            'nonce': web3.eth.get_transaction_count(sender)
-        }
-        gasAmount = web3.eth.estimate_gas(gas_tx)
+            'nonce': nonce
+        })
+        #gasAmount = web3.eth.estimate_gas(gas_tx)
         
         totalfee = web3.from_wei(gasPrice*gasAmount, 'gwei')
         mainbalance = web3.from_wei(web3.eth.get_balance(sender), 'ether')
         totalsend = mainbalance - totalfee
 
         auto_tx = {
-            'chainId': web3.eth.chain_id,
+            'chainId': chainId,
             'from': sender,
             'gas': gasAmount,
             'to': recipient,
             'value': web3.to_wei(totalsend, 'ether'),
             'gasPrice': gasPrice,
-            'nonce': web3.eth.get_transaction_count(sender)
+            'nonce': nonce
         }
 
         fixamount = '%.18f' % float(totalsend)
-        #sign the transaction
-        sign_txn = web3.eth.account.sign_transaction(auto_tx, senderkey)
-        #send transaction
+        #sign & send transaction
         print(f'Processing Send {fixamount} Native From {sender} To Single Address : {recipient} ...')
-        tx_hash = web3.eth.send_raw_transaction(sign_txn.rawTransaction)
+        tx_hash = web3.eth.send_raw_transaction(web3.eth.account.sign_transaction(auto_tx, senderkey).rawTransaction)
 
         #get transaction hash
         txid = str(web3.to_hex(tx_hash))
