@@ -33,7 +33,7 @@ def TransferNative(sender, senderkey, recipient):
         })
         #gasAmount = web3.eth.estimate_gas(gas_tx)
         
-        totalfee = web3.from_wei(gasPrice*gasAmount, 'gwei')
+        totalfee = web3.from_wei(web3.from_wei(gasPrice, 'gwei')*gasAmount, 'gwei')
         mainbalance = web3.from_wei(web3.eth.get_balance(sender), 'ether')
         totalsend = mainbalance - totalfee
 
