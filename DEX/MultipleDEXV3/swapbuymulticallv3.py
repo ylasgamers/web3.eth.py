@@ -4,8 +4,7 @@ import time
 import config
 
 web3 = Web3(Web3.HTTPProvider(config.rpcurl))
-chainId = int(config.chainid)
-
+chainId = web3.eth.chain_id
 print("Swap Buy DEX V3 | Works Multiple DEX")
 
 #connecting web3
@@ -67,15 +66,13 @@ txSwap = contractrouter.encode_abi(fn_name="exactInputSingle", args=[(wrapped, t
 txCall = [txSwap]
 
 #estimate gas limit contract
-gas_tx = contractrouter.functions.multicall(deadline, txCall).build_transaction({
+gasAmount = contractrouter.functions.multicall(deadline, txCall).estimate_gas({
     'chainId': chainId,
     'from': sender,
     'value': amount,
-    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+    'gasPrice': web3.eth.gas_price,
     'nonce': web3.eth.get_transaction_count(sender)
 })
-gasAmount = web3.eth.estimate_gas(gas_tx)
-#print(gasAmount)
 
 #calculate transaction fee
 print('')
@@ -90,7 +87,7 @@ token_tx = contractrouter.functions.multicall(deadline, txCall).build_transactio
     'from': sender,
     'value': amount,
     'gas': gasAmount,
-    'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+    'gasPrice': web3.eth.gas_price,
     'nonce': web3.eth.get_transaction_count(sender)
 })
 
