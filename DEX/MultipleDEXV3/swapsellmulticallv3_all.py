@@ -4,7 +4,7 @@ import time
 import config
 
 web3 = Web3(Web3.HTTPProvider(config.rpcurl))
-chainId = int(config.chainid)
+chainId = web3.eth.chain_id
 
 print("Swap Sell DEX V3 | Works Multiple DEX")
 
@@ -64,13 +64,12 @@ deadline = int(time.time()) + 1000000
 
 def ApproveToken():        
     #estimate gas limit approve
-    gas_approve = token_contract.functions.approve(contract_router, config.apprv).build_transaction({
+    gasApprove = token_contract.functions.approve(contract_router, config.apprv).estimate_gas({
         'chainId': chainId,
         'from': sender,
-        'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+        'gasPrice': web3.eth.gas_price,
         'nonce': web3.eth.get_transaction_count(sender)
     })
-    gasApprove = web3.eth.estimate_gas(gas_approve)
 
     #calculate transaction fee
     print('')
@@ -105,17 +104,12 @@ def CallMulticall():
     txWETH = contractrouter.encode_abi(fn_name="unwrapWETH9", args=[weth_balance, sender])
     txCall = [txSwap, txWETH]  
 
-    #estimate gas limit contract
-    txEsGas = contractrouter.encode_abi(fn_name="exactInputSingle", args=[(tokenaddr, wrapped, feepool, contract_router, amount, 0, 0)])
-    txEsGasCall = [txEsGas, txWETH]  
-
-    gas_tx = contractrouter.functions.multicall(deadline, txEsGasCall).build_transaction({
+    gasAmount = contractrouter.functions.multicall(deadline, txCall).estimate_gas({
         'chainId': chainId,
         'from': sender,
-        'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+        'gasPrice': web3.eth.gas_price,
         'nonce': web3.eth.get_transaction_count(sender)
     })
-    gasAmount = web3.eth.estimate_gas(gas_tx)
 
     #calculate transaction fee
     print('')
@@ -128,7 +122,7 @@ def CallMulticall():
         'chainId': chainId,
         'from': sender,
         'gas': gasAmount,
-        'gasPrice': web3.eth.gas_price, #web3.toWei(gasPrice,'gwei'),
+        'gasPrice': web3.eth.gas_price,
         'nonce': web3.eth.get_transaction_count(sender)
     })
 
