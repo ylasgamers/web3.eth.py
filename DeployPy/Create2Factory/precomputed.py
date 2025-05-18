@@ -40,21 +40,17 @@ web3 = Web3()
 
 # Calculate the address where the contract will be deployed
 def compute_create2_address(factory, salt, bytecode):
-    bytecode_hash = web3.keccak(text=bytecode).hex()
-    return web3.to_checksum_address(
-        web3.keccak(
-            bytes.fromhex('ff') +
-            factory.lower().encode() +
-            bytes.fromhex(salt[2:]) +
-            bytes.fromhex(bytecode_hash[2:])
-        )[-20:].hex()
-    )
+    factory_bytes = bytes.fromhex(factory[2:])
+    salt_bytes = bytes.fromhex(salt[2:])
+    bytecode_hash = web3.keccak(bytes.fromhex(bytecode))
+    create2_hash = web3.keccak(b'\xff' + factory_bytes + salt_bytes + bytecode_hash)
+    return web3.to_checksum_address(create2_hash[-20:])
 
 while True:
     factory_addr = web3.to_checksum_address('0x0000000000FFe8B47B3e2130213B802212439497') #create2 factory
-    #salt = f'0x0000000000000000000000000000000000000000{secrets.token_hex(12)}' #random salt
-    sender = web3.to_checksum_address('0xyour_address')
-    salt = f'{sender}{secrets.token_hex(12)}' #random salt with add your address as salt
+    salt = f'0x0000000000000000000000000000000000000000{secrets.token_hex(12)}' #random salt
+    #sender = web3.to_checksum_address('0xyour_address')
+    #salt = f'{sender}{secrets.token_hex(12)}' #random salt with add your address as salt
     precomputed_address = '0x000' #custom precomputed address
     computed_address = compute_create2_address(factory_addr, salt, bytecode)
     precomputed_address_filter = computed_address[:len(precomputed_address)]
